@@ -1,0 +1,42 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+				  <b>  Contact information </b> <br/>
+			<a style="color:white" href="http://www.kft.pwr.edu.pl/"> Department of Theoretical Physics</a> <br/>
+			<a style="color:white" href="http://wppt.pwr.edu.pl/">Faculty of Fundamental Problems of Technology</a><br/>
+			<a style="color:white" href="http://pwr.edu.pl/en/">Wrocław University of Science and Technology</a><br/>
+
+
+
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+				<!--   {{ site.title | escape }} -->
+            {%- endif -%}
+            </li>
+            {%- if site.email -%}
+            <li><a style="color:white;" class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{- site.description | escape -}}</p>
+        {%- include social.html -%}
+      </div>
+    </div>
+
+  </div>
+
+</footer>
