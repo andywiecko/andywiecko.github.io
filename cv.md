@@ -31,8 +31,3 @@ Python, C/C++, [Armadillo][arma], $$\LaTeX$$, GNUplot, bash, D-Wave SAPI
 [arma]: http://arma.sourceforge.net/
 
 
-{% if page.mathjax %}
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-{% endif %}
