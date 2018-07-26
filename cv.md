@@ -15,7 +15,7 @@ order: 1
 
 # Skills
 
-Python, C/C++, [Armadillo][arma], $$\LaTeX$$, GNUplot, bash, D-Wave SAPI
+Python, C/C++, [Armadillo][arma], $ \LaTeX \$, GNUplot, bash, D-Wave SAPI
 
 # Conferences, Workshops, etc.
 
