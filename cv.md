@@ -8,16 +8,21 @@ order: 1
 # Education
 
 | Inter-Faculty Individual Studies: Engineering Physics and Computer Science, University of Silesia in Katowice, Poland | 2013-2016 |
-| Engineering Physics Degree, thesis: *Numerical methods in quantum nanowires* (PL), awarded with distinction, supervisor: Prof. M. Mierzejewski | 2016 |
+| Engineering Physics Degree, thesis: [*Numerical methods in quantum nanowires*]({{ site.url }}/assets/beng_thesis.pdf) (PL), awarded with distinction, supervisor: Prof. M. Mierzejewski | 2016 |
 | Theoretical Physics, University of Silesia in Katowice, Poland | 2016-2018 |
-| Master Degree, thesis: *Dynamics of disordered quantum annealers* (ENG), awarded with distinction, supervisor: Prof. M. Mierzejewski | 2018 |
+| Master Degree, thesis: [*Dynamics of disordered quantum annealers*]({{ site.url }}/assets/msc_thesis.pdf) (ENG), awarded with distinction, supervisor: Prof. M. Mierzejewski | 2018 |
 | PhD in Physics, Wrocław University of Science and Technology, supervisor: Prof. M. Mierzejewski | 2018-...|
+
+
 
 # Skills
 
 Python, C/C++, [Armadillo][arma], $ \LaTeX \$, GNUplot, bash, D-Wave SAPI
 
 # Conferences, Workshops, etc.
+
+* 42th International conference of theoretical physics:
+’Correlations and coherence at different scales’, Ustroń, Poland, 2018
 
 * 26th International Conference on Atomic Physics: Summer School, Barcelona, Spain, 2018 
 
