@@ -18,7 +18,7 @@ order: 4
 			<a href="http://www.kft.pwr.edu.pl/"> Department of Theoretical Physics</a>, <br/>
 			<a href="http://wppt.pwr.edu.pl/">Faculty of Fundamental Problems of Technology</a>,<br/>
 			<a href="http://pwr.edu.pl/en/">Wrocław University of Science and Technology</a>.<br/>
-
+			Building A-1, office 503
 
 
 		  </td>
