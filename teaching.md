@@ -5,4 +5,9 @@ permalink: /teaching/
 order: 3
 ---
 
-Teaching
+[**Laboratorium podstaw fizyki**](/teaching/LPF)
+
+
+[**Fizyka, Wydział Mechniczny**](/teaching/Fizyka)
+
+
