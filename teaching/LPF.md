@@ -4,6 +4,20 @@ layout: page
 excludeFromNav: true
 ---
 
+# Terminy spotkań
+
+data | sala | nr ćwiczenia
+:----:|:-----:|:-----:
+08.10.18 |65| --
+15.10.18 |65| 100a,100b
+22.10.18 |67| 53
+05.11.18 |65| ?
+12.11.18 |66| ?
+19.11.18 |52| ?
+26.11.18 |53| ?
+03.12.18 |54| odrabianie zajęć
+
+
 
 # Wymagania dotyczące sprawozdań
 
