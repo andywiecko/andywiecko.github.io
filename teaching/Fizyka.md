@@ -19,3 +19,5 @@ excludeFromNav: true
 # Listy zadań:
 
 [Zadania](http://www.if.pwr.edu.pl/~mierzejewski/)
+
+[Lista 1, zadanie 8]({{ site.url }}/assets/zadanie8.pdf)
