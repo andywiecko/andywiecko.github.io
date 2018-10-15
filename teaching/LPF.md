@@ -42,7 +42,7 @@ Gorąco zchęcam do pisania sprawozdań przy użycia oprogramowania $ \LaTeX \$ 
 Oczywiście nie jest to obowiązkowe.
 Możliwe są ze mną konsultacje na ten temat, zapraszam do kontaktu przez e-mail.
 
-[Przykładowy wykres]({{ site.url }}/assets/example-plot.pdf)
+[Przykładowy wykres]({{ site.url }}/teaching/LPF/example-plot.pdf)
 
 # Ocenianie sprawozdań
 
