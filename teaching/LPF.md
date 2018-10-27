@@ -44,6 +44,8 @@ Możliwe są ze mną konsultacje na ten temat, zapraszam do kontaktu przez e-mai
 
 [Przykładowy wykres]({{ site.url }}/teaching/LPF/example-plot.pdf)
 
+[Przykładowe sprawozdanie]({{ site.url }}/teaching/LPF/example-report.pdf)
+
 # Ocenianie sprawozdań
 
 Ocena za poszczególne sprawozdanie będzie równoważna liczbie korekt danego sprawozdania przez prowadzącego.
