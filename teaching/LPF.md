@@ -17,7 +17,7 @@ data | sala | nr ćwiczenia
 26.11.18 |53| 84
 03.12.18 |54| odrabianie zajęć (8)
 
-
+Dane do ćwiczenia 105: [dane1]({{ site.url }}/teaching/LPF/data1.txt), [dane2]({{ site.url }}/teaching/LPF/data2.txt)
 
 # Wymagania dotyczące sprawozdań
 
