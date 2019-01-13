@@ -23,3 +23,5 @@ excludeFromNav: true
 [Lista 1, zadanie 8]({{ site.url }}/teaching/Fizyka/zadanie8.pdf)
 
 [Dodatkowe zadania]({{ site.url }}/teaching/Fizyka/dodatkoweZadania.pdf)
+
+[Szeregowe i równoległe układy sprężyn (wikipedia)](https://en.wikipedia.org/wiki/Series_and_parallel_springs)
