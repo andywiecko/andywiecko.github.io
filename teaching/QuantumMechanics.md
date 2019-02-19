@@ -21,3 +21,6 @@ excludeFromNav: true
 
 [Lista 1, aparat matematyczny]({{ site.url }}/teaching/QuantumMechanics/lista1.pdf)
 
+[Lista 2, bariery, studnie i tunelowanie]({{ site.url }}/teaching/QuantumMechanics/lista2.pdf)
+
+[Lista 3, oscylator harmoniczny]({{ site.url }}/teaching/QuantumMechanics/lista3.pdf)
