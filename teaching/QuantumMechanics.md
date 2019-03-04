@@ -19,7 +19,10 @@ excludeFromNav: true
 
 # Listy zadań:
 
-[Lista 1, aparat matematyczny]({{ site.url }}/teaching/QuantumMechanics/lista1.pdf)
+[Lista 1a, aparat matematyczny]({{ site.url }}/teaching/QuantumMechanics/lista1a.pdf)
+
+[Lista 1b, aparat matematyczny]({{ site.url }}/teaching/QuantumMechanics/lista1b.pdf)
+
 
 [Lista 2, bariery, studnie i tunelowanie]({{ site.url }}/teaching/QuantumMechanics/lista2.pdf)
 
