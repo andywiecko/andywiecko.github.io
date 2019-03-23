@@ -23,6 +23,7 @@ excludeFromNav: true
 
 [Lista 1b, aparat matematyczny]({{ site.url }}/teaching/QuantumMechanics/lista1b.pdf)
 
+[Lista 1c, aparat matematyczny]({{ site.url }}/teaching/QuantumMechanics/lista1c.pdf)
 
 [Lista 2, bariery, studnie i tunelowanie]({{ site.url }}/teaching/QuantumMechanics/lista2.pdf)
 
