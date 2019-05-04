@@ -28,3 +28,5 @@ excludeFromNav: true
 [Lista 2, bariery, studnie i tunelowanie]({{ site.url }}/teaching/QuantumMechanics/lista2.pdf)
 
 [Lista 3, oscylator harmoniczny]({{ site.url }}/teaching/QuantumMechanics/lista3.pdf)
+
+[Notatki do ćwiczeń]({{ site.url }}/teaching/QuantumMechanics/notatki.pdf)
