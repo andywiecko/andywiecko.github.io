@@ -29,4 +29,6 @@ excludeFromNav: true
 
 [Lista 3, oscylator harmoniczny]({{ site.url }}/teaching/QuantumMechanics/lista3.pdf)
 
-[Notatki do ćwiczeń]({{ site.url }}/teaching/QuantumMechanics/notatki.pdf)
+[Lista 4, spin]({{ site.url }}/teaching/QuantumMechanics/lista4.pdf)
+
+[Notatki do ćwiczeń (aktualizacja: 25/05/2019)]({{ site.url }}/teaching/QuantumMechanics/notatki.pdf)
