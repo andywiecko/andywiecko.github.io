@@ -9,7 +9,7 @@ Check this out! I made a game using gnuplot: [GnuplotSnake][td]
 You ask why? Because I can!
 To play the game, just type `gnuplot snake.gnuplot`.
 Controls: arrows.
-Make sure that you have installed `GNUplot verion 5.2`
+Make sure that you have installed `GNUplot version 5.2`
 I attached below preview from the game:
 
 <figure style="text-align: center">
