@@ -31,4 +31,4 @@ excludeFromNav: true
 
 [Lista 4, spin]({{ site.url }}/teaching/QuantumMechanics/lista4.pdf)
 
-[Notatki do ćwiczeń (aktualizacja: 03/06/2019)]({{ site.url }}/teaching/QuantumMechanics/notatki.pdf)
+[Notatki do ćwiczeń (aktualizacja: 04/06/2019)]({{ site.url }}/teaching/QuantumMechanics/notatki.pdf)
