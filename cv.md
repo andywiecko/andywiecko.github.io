@@ -21,6 +21,10 @@ Python, C/C++, [Armadillo][arma], $ \LaTeX \$, GNUplot, bash, D-Wave SAPI
 
 # Conferences, Workshops, etc.
 
+* Adiabatic Quantum Computing Conference, Innsbruck, Austria, 2019
+
+* Majorana modes and beyond, MagTop, Warsaw, Poland, 2019
+
 * 42th International conference of theoretical physics:
 ’Correlations and coherence at different scales’, Ustroń, Poland, 2018
 
