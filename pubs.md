@@ -7,7 +7,7 @@ order: 2
 
 1. A. Więckowski, S. Deffner, B. Gardas,
 *Disorder-assisted graph coloring on quantum annealers*,
-[arXiv preprint (pdf)](https://arxiv.org/pdf/1903.07056.pdf);
+[arXiv preprint (pdf)](https://arxiv.org/pdf/1903.07056.pdf) <span style="color:red">*in review*</span>;
 2. A. Więckowski, M.M. Maśka, M. Mierzejewski, 
 *Majorana modes in interacting systems identified by searching for local integrals of motion*, 
 [Phys. Rev. Lett. 120, 040504 (2018)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.040504);
