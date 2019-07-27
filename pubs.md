@@ -6,6 +6,7 @@ order: 2
 ---
 
 1. A. Więckowski, A. Ptok, *Influence of long-range interaction on Majorana zero modes*, <span style="color:red">*in review*</span>
+1. A. Więckowski, A. Ptok, *Dynamics of quantum annealers -- Ising model with transverse field study*, <span style="color:red">*in review*</span>
 2. A. Więckowski, S. Deffner, B. Gardas,
 *Disorder-assisted graph coloring on quantum annealers*,
 [arXiv preprint (pdf)](https://arxiv.org/pdf/1903.07056.pdf) <span style="color:red">*in review*</span>;
