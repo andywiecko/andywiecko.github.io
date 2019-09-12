@@ -19,3 +19,8 @@ order: 2
 Proceedings of the silesian cross-border workshop on applied physics, *Majorana
 states in the Kitaev model with many-body interactions*, ISBN: 978-80-248-3974-5 (2016).
 {:reversed="reversed"}
+
+
+### Unpublished (Polish only)
+
+1. A. Więckowski, *Symulowane wyżarzanie problemu kolorowania grafu*, [doi](https://dx.doi.org/10.13140/RG.2.2.19302.16969)
