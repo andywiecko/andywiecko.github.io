@@ -5,6 +5,7 @@ permalink: /pubs/
 order: 2
 ---
 
+1. <b>A. Więckowski</b>, M. Mierzejewski, M. Kupczyński, *Majorana phase-gate based on the geometric phase*, <span style="color:red">*in review*</span>
 1. K. Jałowiecki, <u>A. Więckowski</u>, P. Gawron, B. Gardas, *Parallel in time dynamics with quantum annealers*, 
 [arXiv preprint (pdf)](https://arxiv.org/abs/1909.04929) <span style="color:red">*in review*</span>
 1. <u>A. Więckowski</u>, A. Ptok, *Influence of long-range interaction on Majorana zero modes*, <span style="color:red">*in review*</span>
