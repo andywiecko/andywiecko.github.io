@@ -10,3 +10,5 @@ order: 3
 [**Fizyka, Wydział Mechniczny**](/teaching/Fizyka)
 
 [**Podstawy fizyki kwantowej**](/teaching/QuantumMechanics)
+
+[**Wstęp do programowania**](/teaching/Programing)
