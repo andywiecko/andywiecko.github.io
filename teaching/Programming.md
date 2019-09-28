@@ -6,7 +6,13 @@ excludeFromNav: true
 
 # Listy zadań
 
-Under construction
+Zadania (under construction)
+
+Kody z zajęć:
+
+[Grupa wt 13:15--15:00](https://github.com/andywiecko/Wstep-do-programowania/tree/grupa-wt-1315-1500)
+
+[Grupa czw 17:05-18:45](https://github.com/andywiecko/Wstep-do-programowania/tree/grupa-cz-1705-1845)
 
 
 # Zaliczenia przedmiotu
@@ -34,5 +40,7 @@ Skala ocen
 [Zanurkuj w pythonie (PL)](https://pl.wikibooks.org/wiki/Zanurkuj_w_Pythonie)
 
 [Python Programing (ENG)](https://en.wikibooks.org/wiki/Python_Programming)
+
+[Nie wiesz czemu nie działa? Sprawdź czy ktoś miał już taki problem!](https://stackoverflow.com/)
 
 [Link do Opiekuna przedmiotu](http://www.if.pwr.edu.pl/~tarnowski/201920z_wdp_ftopt.html)
