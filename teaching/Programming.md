@@ -8,11 +8,11 @@ excludeFromNav: true
 
 Zadania (under construction)
 
-Kody z zajęć:
+### Kody z zajęć:
 
 [Grupa wt 13:15--15:00](https://github.com/andywiecko/Wstep-do-programowania/tree/grupa-wt-1315-1500)
 
-[Grupa czw 17:05-18:45](https://github.com/andywiecko/Wstep-do-programowania/tree/grupa-cz-1705-1845)
+[Grupa czw 17:05--18:45](https://github.com/andywiecko/Wstep-do-programowania/tree/grupa-cz-1705-1845)
 
 
 # Zaliczenia przedmiotu
