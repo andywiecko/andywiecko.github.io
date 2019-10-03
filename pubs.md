@@ -10,7 +10,7 @@ order: 2
 1. K. Jałowiecki, **A. Więckowski**, P. Gawron, B. Gardas, *Parallel in time dynamics with quantum annealers*, 
 [arXiv preprint (pdf)](https://arxiv.org/pdf/1909.04929.pdf) <span style="color:red">*in review*</span>
 1. **A. Więckowski**, A. Ptok, *Influence of long-range interaction on Majorana zero modes*, 
-[arXiv preprint (pdf)](https://arxiv.org/pdf/1910.00872.pdf) <span style="color:red">*accepted*</span>
+[arXiv preprint (pdf)](https://arxiv.org/pdf/1910.00872.pdf) <span style="color:green">*accepted*</span>
 1. **A. Więckowski**, A. Ptok, *Dynamics of quantum annealers -- Ising model with transverse field study*, <span style="color:red">*in review*</span>
 2. **A. Więckowski**, S. Deffner, B. Gardas,
 *Disorder-assisted graph coloring on quantum annealers*,
