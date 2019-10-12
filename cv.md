@@ -7,16 +7,9 @@ order: 1
 
 # Education
 
-<style>
-table th:first-of-type {
-    width: 80%;
-}
-table th:nth-of-type(2) {
-    width: 20%;
-}
-</style>
 
 
+| --- | :---: |
 | Inter-Faculty Individual Studies: Engineering Physics and Computer Science, University of Silesia in Katowice, Poland | 2013--2016 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
 | Engineering Physics Degree, thesis: [*Numerical methods in quantum nanowires*]({{ site.url }}/assets/beng_thesis.pdf) (PL), awarded with distinction, supervisor: Prof. M. Mierzejewski | 2016 |
 | Theoretical Physics, University of Silesia in Katowice, Poland | 2016--2018 |
