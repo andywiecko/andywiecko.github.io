@@ -12,3 +12,5 @@ order: 3
 [**Podstawy fizyki kwantowej**](/teaching/QuantumMechanics)
 
 [**Wstęp do programowania**](/teaching/Programming)
+
+[**Pakiety obliczeniowe**](/teaching/PakietyObliczeniowe)
