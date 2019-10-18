@@ -6,15 +6,15 @@ order: 2
 ---
 
 1. **A. Więckowski**, M. Mierzejewski, M. Kupczyński, *Majorana phase-gate based on the geometric phase*,
-[arXiv preprint (pdf)](https://arxiv.org/pdf/1909.10237.pdf) <span style="color:red">*in review*</span>
+[arXiv preprint (pdf)](https://arxiv.org/pdf/1909.10237.pdf) <span style="color:red">*in review*</span>;
 1. K. Jałowiecki, **A. Więckowski**, P. Gawron, B. Gardas, *Parallel in time dynamics with quantum annealers*, 
-[arXiv preprint (pdf)](https://arxiv.org/pdf/1909.04929.pdf) <span style="color:red">*in review*</span>
-1. **A. Więckowski**, A. Ptok, *Dynamics of quantum annealers -- Ising model with transverse field study*, <span style="color:red">*in review*</span>
+[arXiv preprint (pdf)](https://arxiv.org/pdf/1909.04929.pdf) <span style="color:red">*in review*</span>;
+1. **A. Więckowski**, A. Ptok, *Dynamics of quantum annealers -- Ising model with transverse field study*, <span style="color:red">*in review*</span>;
 1. **A. Więckowski**, S. Deffner, B. Gardas,
 *Disorder-assisted graph coloring on quantum annealers*,
 [arXiv preprint (pdf)](https://arxiv.org/pdf/1903.07056.pdf) <span style="color:red">*in review*</span>;
 1. **A. Więckowski**, A. Ptok, *Influence of long-range interaction on Majorana zero modes*, 
-[<span style="color:green">**Phys. Rev. B 100**, 144510 (2019)</span>](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.144510), [arxiv](https://arxiv.org/pdf/1910.00872.pdf); 
+[<span style="color:green">**Phys. Rev. B 100**, 144510 (2019)</span>](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.144510), [arXiv](https://arxiv.org/pdf/1910.00872.pdf); 
 1. **A. Więckowski**, M.M. Maśka, M. Mierzejewski, 
 *Majorana modes in interacting systems identified by searching for local integrals of motion*, 
 [<span style="color:green">**Phys. Rev. Lett. 120**, 040504 (2018)</span>](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.040504), [arXiv](https://arxiv.org/pdf/1707.08125.pdf);
