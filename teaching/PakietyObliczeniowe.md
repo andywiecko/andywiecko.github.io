@@ -5,8 +5,7 @@ excludeFromNav: true
 ---
 
 # Listy zadań
-
-...
+[Lista 5]({{ site.url }}/teaching/PakietyObliczeniowe/Lista5.pdf)
 
 
 # Przydatne informacje
