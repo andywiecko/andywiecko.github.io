@@ -7,6 +7,9 @@ order: 2
 
 [(Check google scholar profile)](https://scholar.google.com/citations?user=X9qrSQoAAAAJ&hl=pl)
 
+
+<div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://scholar.google.com/citations?user=X9qrSQoAAAAJ&hl=pl" href="https://scholar.google.com/citations?user=X9qrSQoAAAAJ&hl=pl" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="https://simpleicons.org/icons/googlescholar.svg" style="width:1em;margin-right:.5em;" alt="Google Scholar icon">Google Scholar profile</a>
+
 <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0000-0002-8113-4021" href="https://orcid.org/0000-0002-8113-4021" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">(Check ORCID profile)</a>
 
 1. **A. Więckowski**, M. Mierzejewski, M. Kupczyński, *Majorana phase-gate based on the geometric phase*,
