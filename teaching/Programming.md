@@ -44,3 +44,5 @@ Skala ocen
 [Nie wiesz czemu nie działa? Sprawdź czy ktoś miał już taki problem!](https://stackoverflow.com/)
 
 [Link do Opiekuna przedmiotu](http://www.if.pwr.edu.pl/~tarnowski/201920z_wdp_ftopt.html)
+
+[Format (string)](https://docs.python.org/3.4/library/string.html#format-specification-mini-language)
