@@ -17,7 +17,7 @@ order: 2
 1. **A. Więckowski**, S. Deffner, B. Gardas,
 *Disorder-assisted graph coloring on quantum annealers*,
 [<span style="color:green">**Phys. Rev. A 100**, 062304 (2019)</span>](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.100.062304),
-[arXiv preprint (pdf)](https://arxiv.org/pdf/1903.07056.pdf) [<span style="color:green">*Accepted*</span>](https://journals.aps.org/pra/accepted/cd076N69Sa917d1b08476a41c577d3b27def3eaf1);
+[arXiv preprint (pdf)](https://arxiv.org/pdf/1903.07056.pdf);
 1. **A. Więckowski**, A. Ptok, *Influence of long-range interaction on Majorana zero modes*, 
 [<span style="color:green">**Phys. Rev. B 100**, 144510 (2019)</span>](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.144510), [arXiv](https://arxiv.org/pdf/1910.00872.pdf); 
 1. **A. Więckowski**, M.M. Maśka, M. Mierzejewski, 
