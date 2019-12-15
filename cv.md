@@ -22,7 +22,7 @@ order: 1
 Python, C++, C#, Unity3d, [Armadillo][arma], $ \LaTeX \$, GNUplot, bash, D-Wave SAPI
 
 # Conferences, Workshops, etc.
-* Mini-symposium on: Recent developments in the theory of topological systems
+* Mini-symposium on: Recent developments in the theory of topological systems,
 Lublin, Poland, 2019
 
 * XIX National Conference on Superconductivity, Bronisławów, Poland, 2019
