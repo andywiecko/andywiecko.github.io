@@ -9,11 +9,12 @@ order: 2
 
 <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0000-0002-8113-4021" href="https://orcid.org/0000-0002-8113-4021" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">ORCID profile</a>
 
-1. **A. Więckowski**, M. Mierzejewski, M. Kupczyński, *Majorana phase-gate based on the geometric phase*,
-[arXiv preprint (pdf)](https://arxiv.org/pdf/1909.10237.pdf) <span style="color:red">*in review*</span>;
+
 1. K. Jałowiecki, **A. Więckowski**, P. Gawron, B. Gardas, *Parallel in time dynamics with quantum annealers*, 
 [arXiv preprint (pdf)](https://arxiv.org/pdf/1909.04929.pdf) <span style="color:red">*in review*</span>;
 1. **A. Więckowski**, A. Ptok, *Dynamics of quantum annealers -- Ising model with transverse field study*, <span style="color:red">*in review*</span>;
+1. **A. Więckowski**, M. Mierzejewski, M. Kupczyński, *Majorana phase-gate based on the geometric phase*,
+[arXiv preprint (pdf)](https://arxiv.org/pdf/1909.10237.pdf) [<span style="color:green">*Accepted*</span>](https://journals.aps.org/prb/accepted/1207eY38W891c464316e9a20dc0e3e7e8d9451522);
 1. **A. Więckowski**, S. Deffner, B. Gardas,
 *Disorder-assisted graph coloring on quantum annealers*,
 [<span style="color:green">**Phys. Rev. A 100**, 062304 (2019)</span>](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.100.062304),
