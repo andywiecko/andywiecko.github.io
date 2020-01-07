@@ -14,7 +14,8 @@ order: 2
 [arXiv preprint (pdf)](https://arxiv.org/pdf/1909.04929.pdf) <span style="color:red">*in review*</span>;
 1. **A. Więckowski**, A. Ptok, *Dynamics of quantum annealers -- Ising model with transverse field study*, <span style="color:red">*in review*</span>;
 1. **A. Więckowski**, M. Mierzejewski, M. Kupczyński, *Majorana phase-gate based on the geometric phase*,
-[arXiv preprint (pdf)](https://arxiv.org/pdf/1909.10237.pdf) [<span style="color:green">*Accepted*</span>](https://journals.aps.org/prb/accepted/1207eY38W891c464316e9a20dc0e3e7e8d9451522);
+[<span style="color:green">**Phys. Rev. B 101**, 014504</span>](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.101.014504),
+[arXiv](https://arxiv.org/pdf/1909.10237.pdf);
 1. **A. Więckowski**, S. Deffner, B. Gardas,
 *Disorder-assisted graph coloring on quantum annealers*,
 [<span style="color:green">**Phys. Rev. A 100**, 062304 (2019)</span>](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.100.062304),
