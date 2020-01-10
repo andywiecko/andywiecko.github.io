@@ -18,7 +18,7 @@ order: 1
 
 # Skills
 
-Python, C++, C#, Unity3d, [Armadillo][arma], $ \LaTeX \$, GNUplot, bash, D-Wave SAPI
+Python, C++, [Armadillo][arma], $ \LaTeX \$, GNUplot, bash, D-Wave SAPI, Unity3d
 
 # Conferences, Workshops, etc.
 * Mini-symposium on: Recent developments in the theory of topological systems,
