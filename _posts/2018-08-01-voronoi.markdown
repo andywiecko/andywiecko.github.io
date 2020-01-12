@@ -9,18 +9,19 @@ categories:
 [Voronoi diagram][voronoi] is a diagram for set $P\$ of $N\$ points from $\mathbb R^n \$ space (generally to any set $X$).
 It is constructed by splitting $\mathbb R^n\$ space into $N\$ subspaces $A_i\$, in such a way that arbitrary point $x\in\mathbb R^n\$
 belongs to $A_i\$, only if point $p_i\in P\$ is the nearest point to $x\$ for given metric $d$.
-From mathematical perspective one can define each subspace in the following way:
+From the mathematical perspective one can define each subspace in the following way:
 
 $$A_i = \{ x\in \mathbb R^n : \forall_{i\neq j} d(x,p_i) \le d(x,p_j)  \}, \$$
 
 where $d(x,y)\$ is given metric.
-One can use arbitrary metric. However most common ones are [Euclidean][euklides] (standard) and [Manhattan][manhattan] (sometimes reffered as taxicab) metrics.
+One can use an arbitrary metric. 
+However, most common ones are [Euclidean][euklides] (standard) and [Manhattan][manhattan] (sometimes referred to as taxicab) metrics.
 The first defined by function: $d(x,y) = \sqrt{\displaystyle\sum_{i=1}^{n}(x_i-y_i)^2} \$ and the other one by: $d(x,y) = \displaystyle\sum_{i=1}^n |x_i-y_i|\$.
 Voronoi diagrams are very useful.
-Their can be found in many aspects of our lifes: in natural sciences, engineering, geometry, computer games or even in medicine.
-The main goal of the post is to introduced to the reader some basics concepts and thought regarding Voronoi diagram.
-I prepared some basics scripts in `gnuplot` and `python` to present to you some methods for solving this kind of problems.
-Let's begin from simple brute-force algorithm in `python`. 
+There can be found in many aspects of our lives: in natural sciences, engineering, geometry, computer games or even in medicine.
+The main goal of the post is to introduced to the reader some basics concepts and thought regarding the Voronoi diagram.
+I prepared some basics scripts in `gnuplot` and `python` to present to you some methods for solving this kind of problem.
+Let's begin with the simple brute-force algorithm in `python`. 
 From now on we will be focus only on $n=2\$ case.
 Below  a simple program is presented.
 Here we assume that we work in a square area: $(x,y)\in \mathbb R^2, 0 \le x,y \le \$`L`.
@@ -60,7 +61,7 @@ for i in range(int(samples)):
         print px,py,min_d([px,py],data)
 {% endhighlight %}
 
-After procedure, one can visualise the results using `gnuplot` programe.
+After the procedure, one can visualize the results using `gnuplot` program.
 Our output has the following form: $x\$, $y\$, $i\$, where $i\$ is the index of subspace $A_i\$.
 
 
@@ -79,8 +80,8 @@ filename = '<python voronoi.py'
 p filename u 1:2:3 w image
 {% endhighlight %}
 
-where `voronoi.py` is filename of the previous python script.
-Here you have an example and comparison of these two different metric on the same random points:
+where `voronoi.py` is the filename of the previous python script.
+Here you have an example and comparison of these two different metrics on the same random points:
 
 
 
@@ -91,12 +92,12 @@ Fig. 1: *An example Voronoi diagram for Euclidean (left) / Manhattan (right) met
 </figure>
 
 
-As you can see the result with Manhattan metric is similar to polyline. 
-Each area's border is a polyline, in a contrast to  Euclidean metric, where borders between neighbours areas are just straight lines.
+As you can see the result with the Manhattan metric is similar to a polyline. 
+Each area's border is a polyline, in contrast to the Euclidean metric, where borders between neighbors' areas are just straight lines.
 In many blogs, websites, people explain Voronoi diagrams by using some graphical programs.
-By generating cones, one can find Voronoi diagram (for Euklidean metric) by simple searching for the interection between them.
-However I have never seen solution for that problem, which was fully designed in `gnuplot`. `Gnuplot` is of course plotting and also a graphical program.
-Most of the community present an example only using the cones, but similar understanding can be considered for other geometric objects, for example for pyramids to solve the problem in Manhattan metric.
+By generating cones, one can find the Voronoi diagram (for Euclidean metric) by simply searching for the intersection between them.
+However, I have never seen a solution to the problem, which was fully designed in `gnuplot`. `Gnuplot` is plotting and also a graphical program.
+Most of the community presents an example only using the cones, but similar understanding can be considered for other geometric objects, for example for pyramids to solve the problem in Manhattan metric.
 
 <figure style="text-align: center">
 <img src="cone.png" width="50%" /><img src="pyramid.png" width="50%" />
@@ -105,7 +106,7 @@ Fig. 2: *Cone/pyramid landscape - graphical method for finding Voronoi diagram.*
 </figure>
 
 The problem comes down to simply drawing the selected geometrical shapes.
-Then one should only map these object into $xy\$ plain.
+Then one should only map these objects into $xy\$ plain.
 Here a `gnuplot` example is presented:
 
 
@@ -161,9 +162,9 @@ Fig. 3: *Maping cone (left) / pyramid (right) landscape into plain - Voronoi dia
 </figure>
 
 
-In previous code snippet there is another variable, which can be changed: distance ratius `r`.
-By Changing `r` value, creation of the intersection between objects can be seen.
-In the next animations this phenomenon was presented.
+In the previous code snippet, there is another variable, which can be changed: distance radius `r`.
+Changing `r` value, creation of the intersection between objects can be seen.
+In the next animations, this phenomenon was presented.
 
 
 <figure style="text-align: center">
@@ -173,7 +174,7 @@ Fig. 4: *Radial growth of Voronoi diagram: Euklidean (left), Manhattan (right) m
 </figure>
 
 
-In this post the simplest solutions to these kind of problems were presented.
+In this post, the simplest solutions to these kinds of problems were presented.
 There are many more (much more sophisticated) algorithms.
 Probably the famous one: [Fortune's algorithm][fortune].
 
