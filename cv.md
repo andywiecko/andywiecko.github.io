@@ -18,7 +18,7 @@ order: 1
 
 # Skills
 
-Python, C++, [Armadillo][arma], $ \LaTeX \$, GNUplot, bash, D-Wave SAPI, Unity3d
+C++, Python, [Armadillo][arma], $ \LaTeX \$, GNUplot, bash, D-Wave SAPI, Unity3d, git, gcc, Makefile, Doxygen, vim, VS Code, PBS Pro, Matlab, Overleaf
 
 # Conferences, Workshops, etc.
 * Mini-symposium on: Recent developments in the theory of topological systems,
@@ -44,4 +44,5 @@ Lublin, Poland, 2019
 
 [arma]: http://arma.sourceforge.net/
 
+<button name="button">Click me</button>
 
