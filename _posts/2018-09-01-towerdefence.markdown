@@ -6,8 +6,8 @@ categories:
 ---
 
 Check this out! I've made my first game using Unity Engine: [Tower Defence][td]
-There are already builds for linux and windows OS.
-To play the game, just run proper file from `Builds/` dir.
+There are already builds for Linux and Windows OS.
+To play the game, just run the proper file from `Builds/` dir.
 I've attached below some screenshots from the game:
 
 <figure style="text-align: center">
