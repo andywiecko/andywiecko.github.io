@@ -10,7 +10,7 @@ You ask why? Because I can!
 To play the game, just type `gnuplot snake.gnuplot`.
 Controls: arrows.
 Make sure that you have installed `GNUplot version 5.2`
-I attached below preview from the game:
+I attached below the preview from the game:
 
 <figure style="text-align: center">
 <img src="preview.gif" width="75%" />
