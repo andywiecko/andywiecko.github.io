@@ -44,5 +44,3 @@ Lublin, Poland, 2019
 
 [arma]: http://arma.sourceforge.net/
 
-<button name="button">Click me</button>
-
