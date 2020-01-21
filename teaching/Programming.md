@@ -6,7 +6,7 @@ excludeFromNav: true
 
 # Listy zadań
 
-Zadania (under construction)
+[Zadania kolokwium zaliczeniowe](https://drive.google.com/open?id=1Fng0Nbis2U5eoAJHnkO0fYKJEW9N51Oz)
 
 ### Kody z zajęć:
 
