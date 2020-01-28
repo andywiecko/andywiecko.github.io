@@ -8,6 +8,8 @@ excludeFromNav: true
 
 [Zadania kolokwium zaliczeniowe](https://drive.google.com/open?id=1Fng0Nbis2U5eoAJHnkO0fYKJEW9N51Oz)
 
+[Poprawa kolokwium](https://drive.google.com/open?id=1--mE3bgUBfmUsFs5Y6ZOicFCMpwYrn5_)
+
 ### Kody z zajęć:
 
 [Grupa wt 13:15--15:00](https://github.com/andywiecko/Wstep-do-programowania/tree/grupa-wt-1315-1500)
