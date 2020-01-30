@@ -6,9 +6,7 @@ excludeFromNav: true
 
 # Listy zadań
 
-[Zadania kolokwium zaliczeniowe](https://drive.google.com/open?id=1Fng0Nbis2U5eoAJHnkO0fYKJEW9N51Oz)
-
-[Poprawa kolokwium](https://drive.google.com/open?id=1--mE3bgUBfmUsFs5Y6ZOicFCMpwYrn5_)
+Poprawa kolokwium
 
 ### Kody z zajęć:
 
