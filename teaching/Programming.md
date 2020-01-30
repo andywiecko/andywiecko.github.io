@@ -6,7 +6,7 @@ excludeFromNav: true
 
 # Listy zadań
 
-Poprawa kolokwium
+[Poprawa kolokwium](https://drive.google.com/open?id=184tL5Q1qcUskhrx1mpu_BnmKNnjk-zus)
 
 ### Kody z zajęć:
 
