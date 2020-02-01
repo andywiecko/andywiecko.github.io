@@ -5,7 +5,7 @@ date:   2020-02-01 12:00:00 +0200
 categories:  
 ---
 
-I made Maple worksheet for studying the \(N\)-body system of pendulums.
+I made Maple worksheet for studying the $N\$-body system of pendulums.
 You can find it [here](https://github.com/andywiecko/Maple-classes-the-final-project).
 Below I attached some snapshots from pendulum dynamics with different initial conditions.
 
