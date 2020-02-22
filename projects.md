@@ -12,10 +12,11 @@ order: 4
 Visit [project website][solid], browse the [API][api] or join the project on [Github][github].
 2. [**MultiLangCV**][CV] -- multi-language LaTeX CV template
 3. [**ploTeX**][plotex] -- python3 parser, which converts gnuplot script into pdf file via pdfLaTeX
-4. ...
+4. [**Game of life**](GoL-JS) -- a simple javascript implementation
 
 [solid]: https://andywiecko.github.io/SOLIDstate/
 [api]: https://andywiecko.github.io/SOLIDstate/api/index.html
 [github]: https://github.com/andywiecko/SOLIDstate/
 [CV]: https://github.com/andywiecko/MultiLangCV/
 [plotex]: https://github.com/andywiecko/plotex/
+[GoL-JS]: https://andywiecko.github.io/GameOfLife-JS/
