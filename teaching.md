@@ -13,4 +13,6 @@ order: 3
 
 [**Wstęp do programowania**](/teaching/Programming)
 
+[**Techniki programowania**](/teaching/ProgrammingTechniques)
+
 [**Pakiety obliczeniowe**](/teaching/PakietyObliczeniowe)
