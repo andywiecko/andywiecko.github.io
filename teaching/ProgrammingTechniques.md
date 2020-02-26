@@ -6,7 +6,7 @@ excludeFromNav: true
 
 # Listy zadań
 
-TODO
+[Lista 1]({{ site.url }}/teaching/ProgrammingTechniques/tp_l01.pdf)
 
 ### Kody z zajęć:
 
