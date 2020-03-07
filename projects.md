@@ -10,6 +10,7 @@ order: 4
 <span style="color:blue">*(Work in progress)*</span> -- C++ library for studying quantum systems 
 (*Exact Diagonalisation*, *Quantum Dynamics*, and more...). 
 Visit [project website][solid], browse the [API][api] or join the project on [Github][github].
+![c++ badge](https://img.shields.io/badge/-C++17-blue?logo="c++")
 2. [**MultiLangCV**][CV] -- multi-language LaTeX CV template
 3. [**ploTeX**][plotex] -- python3 parser, which converts gnuplot script into pdf file via pdfLaTeX
 4. [**Game of life**][GoL-JS] -- a simple javascript implementation
