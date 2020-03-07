@@ -7,6 +7,7 @@ excludeFromNav: true
 # Listy zadań
 
 [Lista 1]({{ site.url }}/teaching/ProgrammingTechniques/tp_l01.pdf)
+[Lista 2]({{ site.url }}/teaching/ProgrammingTechniques/tp_l02.pdf)
 
 ### Kody z zajęć:
 
