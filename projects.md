@@ -12,8 +12,11 @@ order: 4
 Visit [project website][solid], browse the [API][api] or join the project on [Github][github].
 ![c++ badge](https://img.shields.io/badge/-C++17-blue?logo="c++")
 2. [**MultiLangCV**][CV] -- multi-language LaTeX CV template
+![latex badge](https://img.shields.io/badge/-LaTeX-green?logo=latex)
 3. [**ploTeX**][plotex] -- python3 parser, which converts gnuplot script into pdf file via pdfLaTeX
+![python badge](https://img.shields.io/badge/-python3.6-blue?logo=python&logoColor=yellow)
 4. [**Game of life**][GoL-JS] -- a simple javascript implementation
+![javascript badge](https://img.shields.io/badge/-javascript-black?logo=javascript)
 
 [solid]: https://andywiecko.github.io/SOLIDstate/
 [api]: https://andywiecko.github.io/SOLIDstate/api/index.html
