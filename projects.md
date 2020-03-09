@@ -5,7 +5,7 @@ permalink: /projects/
 order: 4
 ---
 
-<img src="../logo.png" alt="SOLID state's logo" width="200"/>
+[//]: <>(<img src="../logo.png" alt="SOLID state's logo" width="200"/>)
 1. [**SOLIDstate**][solid] 
 <span style="color:blue">*(Work in progress)*</span> -- C++ library for studying quantum systems 
 (*Exact Diagonalisation*, *Quantum Dynamics*, and more...). 
