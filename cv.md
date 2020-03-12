@@ -19,7 +19,7 @@ order: 1
 
 # Skills
 
-C++, Python, [Armadillo][arma], $ \LaTeX \$, GNUplot, bash, D-Wave SAPI, Unity3d, git, gcc, Makefile, Doxygen, vim, VS Code, PBS Pro, Matlab, Overleaf
+C++, Python, [Armadillo][arma], $ \LaTeX \$, gnuplot, bash, D-Wave SAPI, Unity3d, git, gcc, Makefile, Doxygen, vim, VS Code, PBS Pro, Matlab, Overleaf
 
 # Conferences, Workshops, etc.
 * Mini-symposium on: Recent developments in the theory of topological systems,
