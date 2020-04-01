@@ -7,7 +7,11 @@ excludeFromNav: true
 # Listy zadań
 
 [Lista 1]({{ site.url }}/teaching/ProgrammingTechniques/tp_l01.pdf)
+
 [Lista 2]({{ site.url }}/teaching/ProgrammingTechniques/tp_l02.pdf)
+
+[Lista 3]({{ site.url }}/teaching/ProgrammingTechniques/tp_l03.pdf)
+[Alternatywne zadanie 4]({{ site.url }}/teaching/ProgrammingTechniques/tp_l04_alt04.pdf)
 
 ### Kody z zajęć:
 
