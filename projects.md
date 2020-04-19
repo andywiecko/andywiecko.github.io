@@ -17,6 +17,8 @@ Visit [project website][solid], browse the [API][api] or join the project on [Gi
 ![python badge](https://img.shields.io/badge/-python3.6-blue?logo=python&logoColor=yellow)
 4. [**Game of life**][GoL-JS] -- a simple javascript implementation
 ![javascript badge](https://img.shields.io/badge/-javascript-black?logo=javascript)
+5. [**DiceAndChaos**][Dice] -- studying chaos of the rolling dice using game physics 
+![unity badge](https://img.shields.io/badge/-Unity3D-black?logo=unity)
 
 [solid]: https://andywiecko.github.io/SOLIDstate/
 [api]: https://andywiecko.github.io/SOLIDstate/api/index.html
@@ -24,3 +26,4 @@ Visit [project website][solid], browse the [API][api] or join the project on [Gi
 [CV]: https://github.com/andywiecko/MultiLangCV/
 [plotex]: https://github.com/andywiecko/plotex/
 [GoL-JS]: https://andywiecko.github.io/GameOfLife-JS/
+[Dice]: https://github.com/andywiecko/DiceAndChaos
