@@ -10,7 +10,7 @@ order: 1
 
 
 | --- | :---: |
-| PhD Degree, thesis: *Majorana Modes in one dimensional systems with many-body interactions*, supervisor: [Prof. M. Mierzejewski][mierzej], co-supervisor: [Dr. Bartłomiej Gardas][gardas] | TBA |
+| PhD Degree, thesis: [*Majorana Modes in one dimensional systems with many-body interactions*]({{ site.url }}/assets/phd_thesis.pdf), supervisor: [Prof. M. Mierzejewski][mierzej], co-supervisor: [Dr. Bartłomiej Gardas][gardas] | TBA |
 | PhD in Physics, Wrocław University of Science and Technology, supervisor: [Prof. M. Mierzejewski][mierzej] | 2018--TBA|
 | Master Degree, thesis: [*Dynamics of disordered quantum annealers*]({{ site.url }}/assets/msc_thesis.pdf) (ENG), awarded with distinction, supervisor: [Prof. M. Mierzejewski][mierzej] | 2018 |
 | Theoretical Physics, University of Silesia in Katowice, Poland | 2016--2018 |
