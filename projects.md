@@ -6,7 +6,7 @@ order: 4
 ---
 
 [//]: <>(<img src="../logo.png" alt="SOLID state's logo" width="200"/>)
-1. [**Majoranapp**][majorana] -- program for efficient identification of Majorana zero modes in non-intercting tight-binding systems. 
+1. [**Majoranapp**][majorana] -- program for efficient identification of Majorana zero modes in non-intercting tight-binding systems (see [Docs][majorana-docs]). 
 ![c++ badge](https://img.shields.io/badge/-C++17-blue?logo="c++")
 2. [**SOLIDstate**][solid] 
 <span style="color:blue">*(Work in progress)*</span> -- C++ library for studying quantum systems 
@@ -23,6 +23,7 @@ Visit [project website][solid], browse the [API][api] or join the project on [Gi
 ![unity badge](https://img.shields.io/badge/-Unity3D-black?logo=unity)
 
 [majorana]: https://github.com/andywiecko/Majoranapp/
+[majorana-docs]: https://andywiecko.github.io/Majoranapp/
 [solid]: https://andywiecko.github.io/SOLIDstate/
 [api]: https://andywiecko.github.io/SOLIDstate/api/index.html
 [github]: https://github.com/andywiecko/SOLIDstate/
