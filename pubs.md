@@ -12,7 +12,7 @@ order: 2
 1. **A. Wieckowski**, A. Ptok, M. Mierzejewski, M. Kupczynski, *Efficient identification of Majorana modes in large tight-binding systems*, [arXiv preprint](https://arxiv.org/pdf/2006.10153.pdf), [SM](https://arxiv.org/src/2006.10153v1/anc/SM) <span style="color:red">*in review*</span>;
 1. K. Jałowiecki, **A. Więckowski**, P. Gawron, B. Gardas, *Parallel in time dynamics with quantum annealers*, 
 [<span style="color:green">**Sci Rep 10**, 13534 (2020)</span>](https://doi.org/10.1038/s41598-020-70017-x), 
-[arXiv preprint (pdf)](https://arxiv.org/pdf/1909.04929.pdf);
+[arXiv](https://arxiv.org/pdf/1909.04929.pdf);
 1. **A. Więckowski**, A. Ptok, *Dynamics of quantum annealers -- Ising model with transverse field study*, <span style="color:green">*accepted*</span>;
 1. **A. Więckowski**, M. Mierzejewski, M. Kupczyński, *Majorana phase-gate based on the geometric phase*,
 [<span style="color:green">**Phys. Rev. B 101**, 014504 (2020)</span>](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.101.014504),
