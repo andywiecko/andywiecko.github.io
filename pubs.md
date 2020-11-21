@@ -13,7 +13,8 @@ order: 2
 1. K. Jałowiecki, **A. Więckowski**, P. Gawron, B. Gardas, *Parallel in time dynamics with quantum annealers*, 
 [<span style="color:green">**Sci. Rep. 10**, 13534 (2020)</span>](https://doi.org/10.1038/s41598-020-70017-x), 
 [arXiv](https://arxiv.org/pdf/1909.04929.pdf);
-1. **A. Więckowski**, A. Ptok, *Dynamics of quantum annealers -- Ising model with transverse field study*, <span style="color:green">*accepted*</span>;
+1. **A. Więckowski**, A. Ptok, *Dynamics of quantum annealers -- Ising model with transverse field study*, 
+[<span style="color:green">**Acta Phys. Pol. A 138**, 686 (2020)*</span>](http://dx.doi.org/10.12693/APhysPolA.138.686);
 1. **A. Więckowski**, M. Mierzejewski, M. Kupczyński, *Majorana phase-gate based on the geometric phase*,
 [<span style="color:green">**Phys. Rev. B 101**, 014504 (2020)</span>](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.101.014504),
 [arXiv](https://arxiv.org/pdf/1909.10237.pdf);
