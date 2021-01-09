@@ -15,11 +15,6 @@ order: 4
 			<img src="../photo.jpg" alt="my photo" style="width:50%"> <br/>
 			</center>
 		        <b>Unity/simulation software developer</b> <br/>
-			Alma Mater: 
-			<a href="http://www.kft.pwr.edu.pl/"> Department of Theoretical Physics</a>, <br/>
-			<a href="http://wppt.pwr.edu.pl/">Faculty of Fundamental Problems of Technology</a>,<br/>
-			<a href="http://pwr.edu.pl/en/">Wrocław University of Science and Technology</a>.<br/>
-			
 		  </td>
         <td style="border:none">
 
@@ -28,16 +23,16 @@ order: 4
 			<ul>
 			  <li>Position based dynamics</li>
 			  <li>Soft body simulation</li>
-			</ul>
-
-			<b>Scientific interests:</b>
-	
-			<ul>
-			  <li>Solid state physics</li>
-			  <li>Majorana zero modes</li>
-			  <li>Quantum computing</li>
+			  <li>Game development</li>
 			</ul>
 			
+			<b>Personal interests:</b>
+			
+			<ul>
+			  <li>Cellular automata</li>
+			  <li>Model making</li>
+			  <li>Sci-fi culture</li>
+			</ul>
 
 			</td>
       </tr>
