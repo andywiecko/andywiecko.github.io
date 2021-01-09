@@ -14,7 +14,9 @@ order: 4
 			<center>
 			<img src="../photo.jpg" alt="my photo" style="width:50%"> <br/>
 			</center>
-			PhD student @ 
+		        <b>Unity/simulation software developer</b> <br/>
+			</br>
+			Alma Mater: 
 			<a href="http://www.kft.pwr.edu.pl/"> Department of Theoretical Physics</a>, <br/>
 			<a href="http://wppt.pwr.edu.pl/">Faculty of Fundamental Problems of Technology</a>,<br/>
 			<a href="http://pwr.edu.pl/en/">Wrocław University of Science and Technology</a>.<br/>
