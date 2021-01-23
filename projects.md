@@ -19,21 +19,14 @@ Implemented features:
 
 # Old projects
 
-[//]: <>(<img src="../logo.png" alt="SOLID state's logo" width="200"/>)
 1. [**Majoranapp**][majorana] -- program for efficient identification of Majorana zero modes in non-intercting tight-binding systems (see [Docs][majorana-docs]). 
-[//]: <>(![c++ badge](https://img.shields.io/badge/-C++17-blue?logo="c++"))
 2. [**SOLIDstate**][solid] -- C++ library for studying quantum systems 
 (*Exact Diagonalisation*, *Quantum Dynamics*, and more...). 
 Visit [project website][solid], browse the [API][api] or join the project on [Github][github].
-[//]: <>(![c++ badge](https://img.shields.io/badge/-C++17-blue?logo="c++"))
-3. [**MultiLangCV**][CV] -- multi-language LaTeX CV template
-[//]: <>(![latex badge](https://img.shields.io/badge/-LaTeX-green?logo=latex))
-4. [**ploTeX**][plotex] -- python3 parser, which converts gnuplot script into pdf file via pdfLaTeX
-[//]: <>(![python badge](https://img.shields.io/badge/-python3.6-blue?logo=python&logoColor=yellow))
-5. [**Game of life**][GoL-JS] -- a simple javascript implementation
-[//]: <>(![javascript badge](https://img.shields.io/badge/-javascript-black?logo=javascript))
-6. [**DiceAndChaos**][Dice] -- studying chaos of the rolling dice using game physics 
-[//]: <>(![unity badge](https://img.shields.io/badge/-Unity3D-black?logo=unity))
+3. [**MultiLangCV**][CV] -- multi-language LaTeX CV template.
+4. [**ploTeX**][plotex] -- python3 parser, which converts gnuplot script into pdf file via pdfLaTeX.
+5. [**Game of life**][GoL-JS] -- a simple javascript implementation.
+6. [**DiceAndChaos**][Dice] -- studying chaos of the rolling dice using game physics.
 
 [majorana]: https://github.com/andywiecko/Majoranapp/
 [majorana-docs]: https://andywiecko.github.io/Majoranapp/
