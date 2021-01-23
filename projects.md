@@ -5,6 +5,14 @@ permalink: /projects/
 order: 4
 ---
 
+# Current projects
+
+<img src="../fallingSand.png" alt="Falling sand game preview" width="200"/>
+
+- **Falling-sand game** (work in progress) -- cellular automata based game inspired by *Noita*. See my [twitter](https://twitter.com/andywiecko) for the preview.
+
+# Old projects
+
 [//]: <>(<img src="../logo.png" alt="SOLID state's logo" width="200"/>)
 1. [**Majoranapp**][majorana] -- program for efficient identification of Majorana zero modes in non-intercting tight-binding systems (see [Docs][majorana-docs]). 
 ![c++ badge](https://img.shields.io/badge/-C++17-blue?logo="c++")
