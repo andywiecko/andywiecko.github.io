@@ -9,7 +9,7 @@ order: 4
 
 <img src="../fallingSand.png" alt="Falling sand game preview" width="200"/>
 
-- **Falling-sand game** (work in progress) -- cellular automata based game inspired by *Noita*. See my [twitter](https://twitter.com/andywiecko) for the preview.
+- **Falling-sand game** (work in progress) -- cellular automata based game inspired by *Noita*. See my [**twitter**](https://twitter.com/andywiecko) for the preview.
 
 # Old projects
 
