@@ -10,6 +10,12 @@ order: 4
 <img src="../fallingSand.png" alt="Falling sand game preview" width="400"/>
 
 - **Falling-sand game** (work in progress) -- cellular automata based game inspired by *Noita*. See my [**twitter**](https://twitter.com/andywiecko) for the preview.
+Implemented features:
+   - basic particles (water, sand, static);
+   - parallel updates of the world;
+   - injecting particles into the world using *paint* like tool;
+   - converting *png* images into the world structs.
+
 
 # Old projects
 
