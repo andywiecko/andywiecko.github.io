@@ -19,7 +19,7 @@ order: 1
 
 # Skills
 
-C#, Unity3d, C++, Python, [Armadillo][arma], $ \LaTeX \$, gnuplot, bash, git, gcc, Makefile, Doxygen, vim
+C#, Unity3d, git, C++, Python, [Armadillo][arma], $ \LaTeX \$, gnuplot, bash
 
 # Conferences, Workshops, etc.
 * Mini-symposium on: Recent developments in the theory of topological systems,
