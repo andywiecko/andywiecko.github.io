@@ -14,7 +14,8 @@ Implemented features:
    - basic particles (water, sand, static);
    - parallel updates of the world;
    - injecting particles into the world using *paint* like tool;
-   - converting *png* images into the world structs.
+   - converting *png* images into the world structs;
+   - simple rigid body objects.
 
 
 # Old projects
