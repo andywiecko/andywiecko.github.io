@@ -7,7 +7,8 @@ order: 4
 
 # Current projects
 
-<img src="../fallingSand.png" alt="Falling sand game preview" width="400"/>
+> <blockquote class="twitter-tweet" data-theme="light"><p lang="en" dir="ltr">Finally, I managed to combine my custom rigid body engine with a falling-sand cellular automaton 😊<a href="https://twitter.com/hashtag/wip?src=hash&amp;ref_src=twsrc%5Etfw">#wip</a> <a href="https://twitter.com/hashtag/unity2d?src=hash&amp;ref_src=twsrc%5Etfw">#unity2d</a> <a href="https://twitter.com/hashtag/burst?src=hash&amp;ref_src=twsrc%5Etfw">#burst</a> <a href="https://twitter.com/hashtag/rigidBodyEngine?src=hash&amp;ref_src=twsrc%5Etfw">#rigidBodyEngine</a> <a href="https://twitter.com/hashtag/cellurarAutomaton?src=hash&amp;ref_src=twsrc%5Etfw">#cellurarAutomaton</a> <a href="https://twitter.com/hashtag/fallingSand?src=hash&amp;ref_src=twsrc%5Etfw">#fallingSand</a> <a href="https://t.co/ki869ryEcs">pic.twitter.com/ki869ryEcs</a></p>&mdash; Andrzej Więckowski, Ph.D. (@andywiecko) <a href="https://twitter.com/andywiecko/status/1396171743040098306?ref_src=twsrc%5Etfw">May 22, 2021</a></blockquote> 
+> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 - **Falling-sand game** (work in progress) -- cellular automata based game inspired by *Noita*. See my [**twitter**](https://twitter.com/andywiecko) for the preview.
 Implemented features:
@@ -16,9 +17,6 @@ Implemented features:
    - injecting particles into the world using *paint* like tool;
    - converting *png* images into the world structs;
    - simple rigid body objects.
-
-> <blockquote class="twitter-tweet" data-theme="light"><p lang="en" dir="ltr">Finally, I managed to combine my custom rigid body engine with a falling-sand cellular automaton 😊<a href="https://twitter.com/hashtag/wip?src=hash&amp;ref_src=twsrc%5Etfw">#wip</a> <a href="https://twitter.com/hashtag/unity2d?src=hash&amp;ref_src=twsrc%5Etfw">#unity2d</a> <a href="https://twitter.com/hashtag/burst?src=hash&amp;ref_src=twsrc%5Etfw">#burst</a> <a href="https://twitter.com/hashtag/rigidBodyEngine?src=hash&amp;ref_src=twsrc%5Etfw">#rigidBodyEngine</a> <a href="https://twitter.com/hashtag/cellurarAutomaton?src=hash&amp;ref_src=twsrc%5Etfw">#cellurarAutomaton</a> <a href="https://twitter.com/hashtag/fallingSand?src=hash&amp;ref_src=twsrc%5Etfw">#fallingSand</a> <a href="https://t.co/ki869ryEcs">pic.twitter.com/ki869ryEcs</a></p>&mdash; Andrzej Więckowski, Ph.D. (@andywiecko) <a href="https://twitter.com/andywiecko/status/1396171743040098306?ref_src=twsrc%5Etfw">May 22, 2021</a></blockquote> 
-> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 # Old projects
 
