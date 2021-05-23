@@ -20,7 +20,6 @@ kramdown:
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-twitter-plugin
 
 footer-link-col: "#ff0000"
 
