@@ -9,7 +9,7 @@ order: 2
 
 <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0000-0002-8113-4021" href="https://orcid.org/0000-0002-8113-4021" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">ORCID profile</a>
 
-1. **A. Wieckowski**, A. Ptok, M. Mierzejewski, M. Kupczynski, *Efficient identification of Majorana modes in large tight-binding systems*, [<span style="color:green">Comput. Phys. Commun. **269**, 108135 (2021)</span>](https://doi.org/10.1016/j.cpc.2021.108135), [arXiv](https://arxiv.org/pdf/2006.10153.pdf); 
+1. **A. Wieckowski**, A. Ptok, M. Mierzejewski, M. Kupczynski, *Efficient identification of Majorana modes in large tight-binding systems*, [<span style="color:green">**Comput. Phys. Commun. 269**, 108135 (2021)</span>](https://doi.org/10.1016/j.cpc.2021.108135), [arXiv](https://arxiv.org/pdf/2006.10153.pdf); 
 1. K. Jałowiecki, **A. Więckowski**, P. Gawron, B. Gardas, *Parallel in time dynamics with quantum annealers*, 
 [<span style="color:green">**Sci. Rep. 10**, 13534 (2020)</span>](https://doi.org/10.1038/s41598-020-70017-x), 
 [arXiv](https://arxiv.org/pdf/1909.04929.pdf);
