@@ -17,10 +17,6 @@ order: 1
 | Engineering Physics Degree, thesis: [*Numerical methods in quantum nanowires*]({{ site.url }}/assets/beng_thesis.pdf) (PL), awarded with distinction, supervisor: [Prof. M. Mierzejewski][mierzej] | 2016 |
 | Inter-Faculty Individual Studies: Engineering Physics and Computer Science, University of Silesia in Katowice, Poland | 2013--2016 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
 
-# Skills
-
-C#, Unity3d, git, C++, Python, [Armadillo][arma], $ \LaTeX \$, gnuplot, bash
-
 # Conferences, Workshops, etc.
 * Mini-symposium on: Recent developments in the theory of topological systems,
 Lublin, Poland, 2019
