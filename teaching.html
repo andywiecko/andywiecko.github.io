@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <title>Andrzej Więckowski, Ph.D. — personal webpage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:url" content="https://andywiecko.github.io/" />
+  <meta property="og:type" content="website" />
+</head>
+
+<style>
+ol.bibliography > li::marker {
+content: "[" counter(list-item) "]\2003";
+}
+.section {
+  font-weight: bold;
+}
+.subsection {
+  font-weight: normal;
+}
+</style>
+
+<body id="top">
+  <header>
+    <h1><span class="latex">Andrzej Więckowski, Ph.D.</h1>
+  </header>
+
+  <div class="abstract" style="text-align: justify;">
+    <h2 style="text-align: center;">Abstract</h2>
+      <blockquote>
+          Welcome to the personal webpage of Andrzej Więckowski, a software developer with a strong academic background. 
+          As a software developer, Andrzej is currently focused on simulations and game engines, leveraging his expertise in both programming and physics to contribute to innovative projects in the field. 
+      </blockquote>
+  </div>
+
+  <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa fa-github fa-lg"></i> andywiecko</button>
+
+  <button id="dark-mode-toggle">Toggle dark mode</button>
+
+  <button id="typeface-toggle">Current typeface: <span id="typeface">Latin Modern</span></button>
+
+  <button onclick="location.href='index.html'" type="button">Home</button>
+
+  <nav role="navigation" class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li class="section"><a href="#teaching">Teaching</a>
+        <ol>
+          <li class="subsection"><a href="#lpf">Laboratorium podstaw fizyki</a></li>
+          <li class="subsection"><a href="#fizyka">Fizyka, Wydział mechaniczny</a></li>
+          <li class="subsection"><a href="#podstawy-fizyki-kwantowej">Podstawy fizyki kwantowej</a></li>
+          <li class="subsection"><a href="#wstep-do-programowania">Wstęp do programowania</a></li>
+          <li class="subsection"><a href="#techniki-programowania">Techniki programowania</a></li>
+          <li class="subsection"><a href="#pakiety-obliczeniowe">Pakiety obliczeniowe</a></li>
+        </ol>
+      </li>
+    </ol>
+  </nav>
+
+  <main>
+    <article>
+      <h2 id="teaching">1 Teaching</h2>
+
+      <h3 id="lpf">1.1 Laboratorium podstaw fizyki</h3>
+      <p>
+        <h4>Terminy spotkań</h4>
+
+        <table class="col-1-c col-2-c col-3-c">
+          <thead>
+            <tr>
+              <th>data</th>
+              <th>sala</th>
+              <th>nr ćwiczenia</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr>
+              <td>08.10.18</td>
+              <td>65</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td>15.10.18</td>
+              <td>65</td>	
+              <td>100a,100b</td>
+            </tr>
+            <tr>
+              <td>22.10.18</td>
+              <td>67</td>
+              <td>53</td>
+            </tr>
+            <tr>
+              <td>05.11.18</td>
+              <td>64</td>
+              <td>44</td>
+            </tr>
+            <tr>
+              <td>12.11.18</td>
+              <td>66</td>
+              <td>29</td>
+            </tr>
+            <tr>
+              <td>19.11.18</td>
+              <td>52</td>
+              <td>105</td>
+            </tr>
+            <tr>
+              <td>26.11.18</td>
+              <td>53</td>
+              <td>84</td>
+            </tr>
+            <tr>
+              <td>03.12.18</td>
+              <td>54</td>
+              <td>odrabianie zajęć (8)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br>
+
+        Dane do ćwiczenia 105: 
+          <a href="http://andywiecko.github.io/teaching/LPF/data1.txt">dane1</a>, 
+          <a href="http://andywiecko.github.io/teaching/LPF/data2.txt">dane2</a>.
+
+        <br>
+        
+        Wykres jaki powinnien się znaleźć (ćw. 105): 
+          <a href="http://andywiecko.github.io/teaching/LPF/plot2.pdf">wykres</a>
+
+        <h4>Wymagania dotyczące sprawozdań</h4>
+        <p>
+          <ol>
+            <li>strona tytułowa (autor, numer ćwiczenia, data wykonania ćwiczenia)</li>
+            <li>wstęp teoretyczny (aspekty fizyczne doświadczenia)</li>
+            <li>opis ćwiczenia (urządzenia pomiarowe, przebieg doświadczenia)</li>
+            <li>wyraźny podział na sekcje (wstęp teoretyczny, opracowanie wyników, podsumowanie, bibliografia)</li>
+            <li>zaokrąglanie wyników (2 cyfry znaczące)</li>
+            <li>tabelki z pomiarami (jednostki, podpis tabelki, numerowanie tabel)</li>
+            <li>wzory do wykonywanych obliczeń (jednostki, przekształcenia)</li>
+            <li>analiza niepewności</li>
+            <li>wykresy (opisy na osiach, legenda jeśli konieczna, jednostki, poprawne wyskalowanie, podpis wykresu, słupki błędów, numerowanie wykresów)</li>
+            <li>regresja liniowa (jeśli potrzebna)</li>
+            <li>bibliografia (1,2 pozycje)</li>
+            <li>wnioski (np. porównanie z danymi literaturowymi, wyszło czy nie wyszło i dlaczego, co zrobić by lepiej zmierzyć)</li>
+            <li>opracowanie wyników (opis krok po kroku obliczeń, wykresów, tabel)</li>
+            <li>estetyka i czytelność (formatowanie tekstu, pogrubienie np. tytułu danej sekcji sprawozdania)</li>
+          </ol>
+        </p>
+
+        <p>
+          Gorąco zachęcam do pisania sprawozdań przy użycia oprogramowania 
+          <span class="latex">L<span>a</span>T<span>e</span>X</span>
+          i tworzenia wykresów w programie gnuplot. 
+          Oczywiście nie jest to obowiązkowe. 
+          Możliwe są ze mną konsultacje na ten temat, zapraszam do kontaktu przez e-mail.
+
+          <br>
+          <br>
+
+          <a href="http://andywiecko.github.io/teaching/LPF/example-plot.pdf">Przykładowy wykres</a>
+          <br>
+          <a href="http://andywiecko.github.io/teaching/LPF/example-report.pdf">Przykładowe sprawozdanie</a>
+        </p>
+
+        <h4>Ocenianie sprawozdań</h4>
+
+        <table class="col-1-c col-2-c col-3-c">
+          <thead>
+            <tr>
+              <th>liczba iteracji</th>
+              <th>ocena</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr><td>1</td><td>5.5</td></tr>
+            <tr><td>2</td><td>5</td></tr>
+            <tr><td>3</td><td>4</td></tr>
+            <tr><td>4</td><td>3</td></tr>
+          </tbody>
+        </table>
+
+        <p>
+          <b>Uwaga!</b> Przy przekroczeniu terminu oddania sprawozdania nie można otrzymać większej oceny niż 3 za dane sprawozdanie
+          Ocena końcowa będzie wyznaczona poprzez średnią artymetyczną ze wszystkich sprawozdań.
+        </p>
+
+        <h4>Przydatne linki</h4>
+        <ul>
+          <li><a href="http://lpf.wppt.pwr.edu.pl/">Strona główna LPF</a></li>
+          <li><a href="https://www.latex-project.org/"><span class="latex">L<span>a</span>T<span>e</span>X</span></a></li>
+          <li><a href="http://www.gnuplot.info/">gnuplot</a></li>
+        </ul>
+
+      </p>
+
+      <p style="text-align: right;"><a href="#top">[Top]</a></p>
+
+      <h3 id="fizyka">1.2 Fizyka, Wydział Mechaniczny</h3>
+      <p>
+      <h4>Warunki zaliczenia</h4>
+      <p>
+        2 kolokwia po 15 pkt., dodatkowe punkty do zdobycia za aktywność przy tablicy, maks. 3 nieusprawiedliwione nieobecności
+      </p>
+
+      <p>
+      <table class="col-1-c col-2-c">
+        <thead>
+          <tr>
+            <th>liczba punktów</th>
+            <th>ocena</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>28 – 30</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>25 – 27</td>
+            <td>4.5</td>
+          </tr>
+          <tr>
+            <td>22 – 24</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>19 – 21</td>
+            <td>3.5</td>
+          </tr>
+          <tr>
+            <td>16 – 18</td>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+      
+      <h4>Listy zadań</h4>
+      
+      <a href="https://andywiecko.github.io/teaching/Fizyka/zadanie8.pdf">Lista 1, zadanie 8</a><br>
+      <a href="https://andywiecko.github.io/teaching/Fizyka/dodatkoweZadania.pdf">Dodatkowe zadania</a><br>
+      <a href="https://en.wikipedia.org/wiki/Series_and_parallel_springs">Szeregowe i równoległe układy sprężyn (wikipedia)</a>
+      
+      </p>
+      
+      <p style="text-align: right;"><a href="#top">[Top]</a></p>
+      
+      <h3 id="podstawy-fizyki-kwantowej">1.3 Podstawy fizyki kwantowej</h3>
+      <h4>Warunki zaliczenia</h4>
+      <p>
+        2 kolokwia po 15 pkt., dodatkowe punkty do zdobycia za aktywność przy tablicy, maks. 3 nieusprawiedliwione nieobecności
+
+        <table class="col-1-c col-2-c">
+          <thead>
+            <tr>
+              <th>liczba punktów</th>
+              <th>ocena</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr>
+              <td>28 – 30</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>25 – 27</td>
+              <td>4.5</td>
+            </tr>
+            <tr>
+              <td>22 – 24</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>19 – 21</td>
+              <td>3.5</td>
+            </tr>
+            <tr>
+              <td>16 – 18</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+        </table>
+      
+        <h4>Listy zadań</h4>
+        
+        <a href="https://andywiecko.github.io/teaching/QuantumMechanics/lista1a.pdf">Lista 1a, aparat matematyczny</a><br>
+        <a href="https://andywiecko.github.io/teaching/QuantumMechanics/lista1b.pdf">Lista 1b, aparat matematyczny</a><br>
+        <a href="https://andywiecko.github.io/teaching/QuantumMechanics/lista1c.pdf">Lista 1c, aparat matematyczny</a><br>
+        <a href="https://andywiecko.github.io/teaching/QuantumMechanics/lista2.pdf">Lista 2, bariery, studnie i tunelowanie</a><br>
+        <a href="https://andywiecko.github.io/teaching/QuantumMechanics/lista3.pdf">Lista 3, oscylator harmoniczny</a><br>
+        <a href="https://andywiecko.github.io/teaching/QuantumMechanics/lista4.pdf">Lista 4, spin</a><br>
+        <a href="https://andywiecko.github.io/teaching/QuantumMechanics/notatki.pdf"><b>Notatki do ćwiczeń</b></a> (aktualizacja: 12/06/2019)
+      
+      </p>
+            
+      <p style="text-align: right;"><a href="#top">[Top]</a></p>
+      
+      <h3 id="wstep-do-programowania">1.4 Wstęp do programowania</h3>
+      <h4>Zaliczenia przedmiotu</h4>
+      <p>
+      Punktacja:
+
+        <ul>
+          <li>3 zaliczenia cząstkowe (3x18 pkt. = 54 pkt.)</li>
+          <li>kolokwium końcowe (40 pkt.)</li>
+          <li>aktywność na zajęciach (6 pkt.)</li>
+        </ul>
+      
+      <br>
+      
+      Warunki konieczne do zaliczenia:
+
+      <ul>
+        <li>uzyskanie co najmniej 50 punktów łącznie</li>
+        <li>uzyskanie co najmniej 20 punktów na kolokwium</li>
+      </ul>
+
+      Kody z zajęć:
+
+      <ul>
+        <li><a href="https://github.com/andywiecko/Wstep-do-programowania/tree/grupa-wt-1315-1500">Grupa wt 13:15–15:00</a></li>
+        <li><a href="https://github.com/andywiecko/Wstep-do-programowania/tree/grupa-cz-1705-1845">Grupa czw 17:05–18:45</a></li>
+      </ul>
+        
+      <table class="col-1-c col-2-c">
+        <thead>
+          <tr>
+            <th>liczba punktów</th>
+            <th>ocena</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>100 – ...</td>
+            <td>5.5</td>
+          </tr>
+          <tr>
+            <td>90 – 99</td>
+            <td>5</td>
+          </tr>
+          <td>80 – 89</td>
+          <td>4.5</td>
+        </tr>
+        <tr>
+          <td>70 – 79</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <tr>
+            <td>60 – 69</td>
+            <td>3.5</td>
+          </tr>
+          <tr>
+            <td>50 – 59</td>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br>
+      Przydatne linki:
+      <ul>
+        <li><a href="https://pl.wikibooks.org/wiki/Zanurkuj_w_Pythonie">Zanurkuj w pythonie (PL)</a></li>
+        <li><a href="https://en.wikibooks.org/wiki/Python_Programming">Python Programing (ENG)</a></li>
+        <li><a href="https://stackoverflow.com/">Nie wiesz czemu nie działa? Sprawdź czy ktoś miał już taki problem!</a></li>
+        <li><a href="http://www.if.pwr.edu.pl/~tarnowski/201920z_wdp_ftopt.html">Link do Opiekuna przedmiotu</a></li>
+        <li><a href="https://docs.python.org/3.4/library/string.html#format-specification-mini-language">Format (string)</a></li>
+      </ul>
+
+      </p>
+
+      <p style="text-align: right;"><a href="#top">[Top]</a></p>
+
+      <h3 id="techniki-programowania">1.5 Techniki programowania</h3>
+      <p>
+      Listy zadań:
+      <ul>
+        <li><a href="http://andywiecko.github.io/teaching/ProgrammingTechniques/tp_l01.pdf">Lista 1</a></li>
+        <li><a href="http://andywiecko.github.io/teaching/ProgrammingTechniques/tp_l02.pdf">Lista 2</a></li>
+        <li><a href="http://andywiecko.github.io/teaching/ProgrammingTechniques/tp_l03.pdf">Lista 3</a></li>
+        <li><a href="http://andywiecko.github.io/teaching/ProgrammingTechniques/tp_l04_alt04.pdf">Alternatywne zadanie 4</a></li>
+      </ul>
+      
+      Kody z zajęć: <a href="https://github.com/andywiecko/Techniki-Programowania">Grupa poniedziałek, 13:15–15:00</a>
+      <br>
+      Notatki z zajęć: <a href="https://github.com/andywiecko/Techniki-Programowania/wiki">github-wiki</a>
+      <h4>Zaliczenia przedmiotu</h4>
+      Punktacja
+      
+      <ul>
+        <li>4 listy zadań (laboratoria) łącznie do zdobycia 100 pkt.</li>
+      </ul>
+
+      Warunki konieczne do zaliczenia:
+      
+      <ul>
+        <li>uzyskanie co najmniej 50 punktów łącznie;</li>
+        <li>uzyskanie minimalnej liczby punktów podanej na każdej liścia zadań.</li>
+      </ul>
+
+      <table class="col-1-c col-2-c">
+        <thead>
+          <tr>
+            <th>liczba punktów</th>
+            <th>ocena</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>100 – ...</td>
+            <td>5.5</td>
+          </tr>
+          <tr>
+            <td>90 – 99</td>
+            <td>5</td>
+          </tr>
+          <td>80 – 89</td>
+          <td>4.5</td>
+        </tr>
+        <tr>
+          <td>70 – 79</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <tr>
+            <td>60 – 69</td>
+            <td>3.5</td>
+          </tr>
+          <tr>
+            <td>50 – 59</td>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      </p>
+
+      <p style="text-align: right;"><a href="#top">[Top]</a></p>
+
+      <h3 id="pakiety-obliczeniowe">1.5 Pakiety obliczeniowe</h3>
+      <p>
+        <h4>Listy zadań</h4>
+        <a href="http://andywiecko.github.io/teaching/po_lista_05_WT.pdf">Lista 5</a>
+        <h4>Przydatne informacje</h4>
+        <p>
+
+          <a href="http://www.cplusplus.com/reference/cstdio/fprintf/">fprintf (funkcja z języka C)</a>
+          <br>
+          <a href="http://www.if.pwr.edu.pl/~jols/">Link do opiekuna przedmiotu</a>
+          <br>
+          <a href="https://www.tutorialspoint.com/execute_matlab_online.php">Octave online</a>
+          <br>
+          <a href="https://www.gnu.org/software/octave/">GNU octave</a>
+        </p>
+      </p>
+
+      <p style="text-align: right;"><a href="#top">[Top]</a></p>
+    </article>
+  </main>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'],],
+      },
+    }
+    const typeFaceToggle = document.getElementById('typeface-toggle')
+    const typeface = document.getElementById('typeface')
+    typeFaceToggle.addEventListener('click', () => {
+      document.body.classList.toggle('libertinus')
+      typeface.textContent = document.body.classList.contains('libertinus') ? 'Libertinus' : 'Latin Modern'
+    })
+
+    const darkModeToggle = document.getElementById('dark-mode-toggle')
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('latex-dark')
+    })
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
