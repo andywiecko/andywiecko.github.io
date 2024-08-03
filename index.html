@@ -3,7 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <title>Andrzej Więckowski, Ph.D. — personal webpage</title>
   <meta charset="UTF-8" />
@@ -29,6 +29,9 @@ content: "[" counter(list-item) "]\2003";
     <h1><span class="latex">Andrzej Więckowski, Ph.D.</h1>
   </header>
 
+  <center>
+    <figure><img src="assets/me.jpg" loading="lazy" alt="Andrzej Więckowski" width="300" /></figure>
+  </center>
   <div class="abstract" style="text-align: justify;">
     <h2 style="text-align: center;">Abstract</h2>
       <blockquote>
@@ -37,13 +40,17 @@ content: "[" counter(list-item) "]\2003";
       </blockquote>
   </div>
 
-  <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa fa-github fa-lg"></i> andywiecko</button>
+  <center>
+    <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
 
-  <button id="dark-mode-toggle">Toggle dark mode</button>
+    <button onclick="location.href='https://github.com/sponsors/andywiecko'">
+      <span style="color: #db61a2"><i class="fa fa-regular fa-heart fa-lg"></i></span> Sponsor
+    </button>
 
-  <button id="typeface-toggle">Current typeface: <span id="typeface">Latin Modern</span></button>
+    <button id="typeface-toggle"><i class="fa-solid fa-font"></i></button>
 
-
+    <button id="dark-mode-toggle"><span id="light" style='color: rgb(24, 49, 83)'><i class="fa-solid fa-moon"></i></span></button>
+  </center>
 
   <nav role="navigation" class="toc">
     <h2>Contents</h2>
@@ -65,67 +72,60 @@ content: "[" counter(list-item) "]\2003";
     <article>
       <h2 id="about">1 About me</h2>
       <p>
-        In my free time, I develop the <a href="#pbd2d">PBD2D</a> engine — a physics engine for two-dimensional soft-body simulations within the Unity Burst compiler. 
-        You can find demo scenes for this project <a href="https://andywiecko.github.io/PBD2D-examples">here</a>. 
-        
-        Additionally, I actively develop <a href="#triangulator">Burst Triangulator</a>, an efficient Unity Delaunay triangulation package with constraints and refinement support.
-
-        I highly appreciate values like <b>minimalism</b> and <b>simplicity</b>.
-
-      I am primarily interested in:
-
-      <ul>
-        <li>simulation</li>
-        <li>game physics</li>
-        <li>computer graphics</li>
-        <li>quantum computing.</li>
-      </ul>
-      
-      I'm passionate about all things related to science 🤓.<br>
-      
-      <br>
-
-      <i class="fa fa-github"></i> <a href="https://github.com/andywiecko">andywiecko</a><br>
-      <i class="ai ai-orcid"></i> <a href="https://orcid.org/0000-0002-8113-4021">ORCID profile</a><br>
-      <i class="ai ai-google-scholar"></i> <a href="https://scholar.google.com/citations?user=X9qrSQoAAAAJ&hl=pl">Google Scholar profile</a>
+        In my free time, I actively work on <a href="#triangulator">Burst Triangulator</a>, an efficient Unity Delaunay triangulation package with support for constraints and refinement. 
+        Additionally, I develop <a href="#pbd2d">PBD2D</a>, a physics engine for two-dimensional soft-body simulations within the Unity Burst compiler.
+        <br>
+        <br>
+        I value minimalism and simplicity in both design and code, striving for efficient solutions.
+        <br>
+        <br>
+        My primary interests include:
+        <ul>
+          <li>Simulation</li>
+          <li>Game Physics</li>
+          <li>Computer Graphics</li>
+        </ul>
       </p>
-      
+
       <p style="text-align: right;"><a href="#top">[Top]</a></p>
 
-      <h2 id="projects">2 Projects<label for="sn-symbol" class="sidenote-toggle sidenote-number"></label><input type="checkbox" id="sn-symbol" class="sidenote-toggle" />
-        <span class="sidenote" style="font-weight: normal;">
-          To see more projects visit <i class="fa fa-github"></i> <a href="https://github.com/andywiecko">andywiecko</a>.
-        </span>
-      </h2>
-      <h3 id="pbd2d">PBD2D</h3>
-      <p>
-        Unity package for Position Based Dynamics in two dimensions. <a href="https://andywiecko.github.io/PBD2D-examples/"><b>Demo</b></a>
-        <br>
-        <br>
-        <a href="https://github.com/andywiecko/pbd2d/">
-          <img src="https://img.shields.io/github/stars/andywiecko/pbd2d?style=social" alt="GitHub Repo stars">
-        </a>
-      </p>
+      <h2 id="projects">2 Projects</h2>
 
-      
-      <h3>Flocking</h3>
-      <p>
-        Mini project which implements brute-force <i>flocking model</i>. <a href="https://andywiecko.github.io/Flocking/"><b>Demo</b></a>
-        <br>
-        <br>
-        <a href="https://github.com/andywiecko/Flocking/">
-          <img src="https://img.shields.io/github/stars/andywiecko/Flocking?style=social" alt="GitHub Repo stars">
-        </a>
-      </p>
-
-      <h3 id="triangulator">BurstTriangulator</h3>
-      <p>
-        A single-file package which provides simple Delaunay triangulation of the given set of points with mesh refinement.
-        <br>
-        <br>
+      <h3 id="triangulator" style="display: flex; align-items: center; gap: 12px;">
+        BurstTriangulator
         <a href="https://github.com/andywiecko/BurstTriangulator/">
           <img src="https://img.shields.io/github/stars/andywiecko/BurstTriangulator?style=social" alt="GitHub Repo stars">
         </a>
+      </h3>
+      <p>
+        A single-file package which provides Delaunay triangulation of the given set of points with constraints and mesh refinement.
+        To view the documentation for the manual and scripting API access it online
+          <a href="https://andywiecko.github.io/BurstTriangulator/manual/"><b>here</b></a>.
+        As an illustrative example, we present the triangulation of Lake Superior with various refinement parameters.
+        The top-left image shows the result without any refinement.
+        Open the image in a new tab to see the details.
+
+        <figure id='lake'><img src="assets/lake-preview-light.png" loading="lazy" alt="Lake Superior"/></figure>
+      </p>
+
+      <br>
+
+      <h3 id="pbd2d" style="display: flex; align-items: center; gap: 12px;">
+        PBD2D
+        <a href="https://github.com/andywiecko/pbd2d/">
+          <img src="https://img.shields.io/github/stars/andywiecko/pbd2d?style=social" alt="GitHub Repo stars">
+        </a>
+      </h3>
+      <p>
+        Unity package for Position Based Dynamics in two dimensions.
+        <br>
+        <br>
+        The package provides an implementation of position based dynamics (PBD) using HPC# (via Burst compiler) including
+        extended position based dynamics (xPBD),
+        shape-matching, and various collision algorithms with a basic friction model.
+        There are also upcoming features regarding one-dimensional structures (rods) and fluids with soft bodies coupling.
+        See online
+        <a href="https://andywiecko.github.io/PBD2D-examples/"><b>Demo</b></a>.
       </p>
 
       <p style="text-align: right;"><a href="#top">[Top]</a></p>
@@ -136,12 +136,12 @@ content: "[" counter(list-item) "]\2003";
       <p>
 
         During my academic career, my research was primarily focused on quantum mechanics in the context of solid-state physics, particularly <i>Majorana zero modes</i>, 
-        and quantum computing, specifically <i>quantum annealing</i>. 
-        I collaborated extensively with 
-        <a href="https://mierzejewski.wppt.pwr.edu.pl/">Professor M. Mierzejewski's group</a>, 
-        <a href="https://sites.google.com/view/bartomiej-gardas/">Dr. B. Gardas's group</a>, 
-        and <a href="https://mmj.pl/~aptok/">Dr. A. Ptok's group</a>. 
-        As a result, I successfully published several <a href="#pubs">papers</a>. 
+        and quantum computing, specifically <i>quantum annealing</i>.
+        I collaborated extensively with
+        <a href="https://mierzejewski.wppt.pwr.edu.pl/">Professor M. Mierzejewski's group</a>,
+        <a href="https://sites.google.com/view/bartomiej-gardas/">Dr. B. Gardas's group</a>,
+        and <a href="https://mmj.pl/~aptok/">Dr. A. Ptok's group</a>.
+        As a result, I successfully published several <a href="#pubs">papers</a>.
         Below, you can find a table summarizing my educational progress.
 
       <table class="col-1-l col-2-c">
@@ -155,13 +155,13 @@ content: "[" counter(list-item) "]\2003";
         <tbody>
           <tr>
             <td>
-              Ph.D. degree, thesis: 
+              Ph.D. degree, thesis:
               <a href="https://andywiecko.github.io/assets/phd_thesis.pdf">
                 <i>Majorana Modes in one dimensional systems with many-body interactions</i>
-              </a> 🇵🇱, 
-              awarded with distinction, supervisor: 
-              <a href="https://mierzejewski.wppt.pwr.edu.pl/">Prof. M. Mierzejewski</a>, 
-              co-supervisor: 
+              </a> 🇵🇱,
+              awarded with distinction, supervisor:
+              <a href="https://mierzejewski.wppt.pwr.edu.pl/">Prof. M. Mierzejewski</a>,
+              co-supervisor:
               <a href="https://sites.google.com/view/bartomiej-gardas/">Dr. Bartłomiej Gardas</a>.
             </td>
             <td>2020</td>
@@ -174,7 +174,7 @@ content: "[" counter(list-item) "]\2003";
           </tr>
           <tr>
             <td>
-              Master Degree, thesis: 
+              Master Degree, thesis:
               <a href="https://andywiecko.github.io/assets/msc_thesis.pdf">
                 <i>Dynamics of disordered quantum annealers</i>
               </a> 🇬🇧, awarded with distinction, supervisor:
@@ -190,17 +190,17 @@ content: "[" counter(list-item) "]\2003";
           </tr>
           <tr>
             <td>
-              B.Eng., Engineering physics, thesis: 
+              B.Eng., Engineering physics, thesis:
               <a href="https://andywiecko.github.io/assets/beng_thesis.pdf">
-                <i>Numerical methods in quantum nanowires</i> 
-              </a> 🇵🇱, awarded with distinction, supervisor: 
+                <i>Numerical methods in quantum nanowires</i>
+              </a> 🇵🇱, awarded with distinction, supervisor:
               <a href="https://mierzejewski.wppt.pwr.edu.pl/">Prof. M. Mierzejewski</a>.
             </td>
             <td>2016</td>
           </tr>
           <tr>
             <td>
-              Inter-Faculty Individual Studies: Engineering physics and Computer science, 
+              Inter-Faculty Individual Studies: Engineering physics and Computer science,
               University of Silesia in Katowice, Poland
             </td>
             <td>2013–2016</td>
@@ -210,7 +210,7 @@ content: "[" counter(list-item) "]\2003";
       </table>
       </p>
       <p style="text-align: right;"><a href="#top">[Top]</a></p>
-      
+
       <h3 id="conferences">3.2 Conferences</h3>
       <p>
         List of the most significant conferences I attended to.
@@ -251,35 +251,35 @@ content: "[" counter(list-item) "]\2003";
       <p>
         <ol reversed start="8" class="bibliography">
           <li>
-            <b>A. Więckowski</b>, A. Ptok, M. Mierzejewski, M. Kupczynski, Efficient identification of Majorana modes in large tight-binding systems, 
+            <b>A. Więckowski</b>, A. Ptok, M. Mierzejewski, M. Kupczynski, Efficient identification of Majorana modes in large tight-binding systems,
             <a href="https://dx.doi.org/10.1016/j.cpc.2021.108135"><i>Comput. Phys. Commun.</i> <b>269</b>, 108135 (2021)</a>.
             <kbd><a href="https://arxiv.org/pdf/2006.10153.pdf">ar<i class="ai ai-arxiv ai"></i>iv:2006.10153v2</a></kbd>
           </li>
           <li>
-            K. Jałowiecki, <b>A. Więckowski</b>, P. Gawron, B. Gardas, Parallel in time dynamics with quantum annealers, 
+            K. Jałowiecki, <b>A. Więckowski</b>, P. Gawron, B. Gardas, Parallel in time dynamics with quantum annealers,
             <a href="https://dx.doi.org/10.1038/s41598-020-70017-x"><i>Sci. Rep.</i> <b>10</b>, 13534 (2020)</a>.
             <br><kbd><a href="https://arxiv.org/pdf/1909.04929.pdf">ar<i class="ai ai-arxiv ai"></i>iv:1909.04929v2</a></kbd>
           </li>
           <li>
-            <b>A. Więckowski</b>, A. Ptok, Dynamics of quantum annealers – Ising model with transverse field study, 
+            <b>A. Więckowski</b>, A. Ptok, Dynamics of quantum annealers – Ising model with transverse field study,
             <a href="https://dx.doi.org/10.12693/APhysPolA.138.686"><i>Acta Phys. Pol. A</i> <b>138</b>, 686 (2020)</a>.</li>
-          <li><b>A. Więckowski</b>, M. Mierzejewski, M. Kupczyński, Majorana phase-gate based on the geometric phase, 
-            <a href="https://dx.doi.org/10.1103/PhysRevB.101.014504"><i>Phys. Rev. B</i> <b>101</b>, 014504 (2020)</a>. 
+          <li><b>A. Więckowski</b>, M. Mierzejewski, M. Kupczyński, Majorana phase-gate based on the geometric phase,
+            <a href="https://dx.doi.org/10.1103/PhysRevB.101.014504"><i>Phys. Rev. B</i> <b>101</b>, 014504 (2020)</a>.
             <kbd><a href="https://arxiv.org/pdf/1909.10237.pdf">ar<i class="ai ai-arxiv ai"></i>iv:1909.10237v1</a></kbd>
           </li>
           <li>
-            <b>A. Więckowski</b>, S. Deffner, B. Gardas, Disorder-assisted graph coloring on quantum annealers, 
-            <a href="https://dx.doi.org/10.1103/PhysRevA.100.062304"><i>Phys. Rev. A</i> <b>100</b>, 062304 (2019)</a>. 
+            <b>A. Więckowski</b>, S. Deffner, B. Gardas, Disorder-assisted graph coloring on quantum annealers,
+            <a href="https://dx.doi.org/10.1103/PhysRevA.100.062304"><i>Phys. Rev. A</i> <b>100</b>, 062304 (2019)</a>.
             <kbd><a href="https://arxiv.org/pdf/1903.07056.pdf">ar<i class="ai ai-arxiv ai"></i>iv:1903.07056v1</a></kbd>
           </li>
           <li>
-            <b>A. Więckowski</b>, A. Ptok, Influence of long-range interaction on Majorana zero modes, 
+            <b>A. Więckowski</b>, A. Ptok, Influence of long-range interaction on Majorana zero modes,
             <a href="https://dx.doi.org/10.1103/PhysRevB.100.144510"><i>Phys. Rev. B</i> <b>100</b>, 144510 (2019)</a>.
             <kbd><a href="https://arxiv.org/pdf/1910.00872.pdf">ar<i class="ai ai-arxiv ai"></i>iv:1910.00872v1</a></kbd>
           </li>
           <li>
             <b>A. Więckowski</b>, M.M. Maśka, M. Mierzejewski, Majorana modes in interacting systems identified by searching for local integrals of motion, 
-            <a href="https://dx.doi.org/10.1103/PhysRevLett.120.040504"><i>Phys. Rev. Lett.</i> <b>120</b>, 040504 (2018)</a>. 
+            <a href="https://dx.doi.org/10.1103/PhysRevLett.120.040504"><i>Phys. Rev. Lett.</i> <b>120</b>, 040504 (2018)</a>.
             <kbd><a href="https://arxiv.org/pdf/1707.08125.pdf">ar<i class="ai ai-arxiv ai"></i>iv:1707.08125v2</a></kbd>
           </li>
           <li>
@@ -287,7 +287,7 @@ content: "[" counter(list-item) "]\2003";
             <i>Proceedings of the silesian cross-border workshop on applied physics</i>, ISBN: 978-80-248-3974-5 (2016).
           </li>
           <li>
-            <b>A. Więckowski</b>, 
+            <b>A. Więckowski</b>,
             <a href="https://dx.doi.org/10.13140/RG.2.2.19302.16969">Symulowane wyżarzanie problemu kolorowania grafu</a><label for="sn-unpublished" class="sidenote-toggle sidenote-number"></label><input type="checkbox" id="sn-unpublished" class="sidenote-toggle" />
             <span class="sidenote">
               Unpublished, polish only
@@ -309,10 +309,10 @@ content: "[" counter(list-item) "]\2003";
           <li><a href="teaching.html#techniki-programowania">Techniki programowania</a></li>
           <li><a href="teaching.html#pakiety-obliczeniowe">Pakiety obliczeniowe</a></li>
         </ul>
-        
+
         See sub-page <a href="teaching.html"><b>Teaching</b></a> for more details.
       </p>
-      
+
       <p style="text-align: right;"><a href="#top">[Top]</a></p>
     </article>
   </main>
@@ -327,12 +327,19 @@ content: "[" counter(list-item) "]\2003";
     const typeface = document.getElementById('typeface')
     typeFaceToggle.addEventListener('click', () => {
       document.body.classList.toggle('libertinus')
-      typeface.textContent = document.body.classList.contains('libertinus') ? 'Libertinus' : 'Latin Modern'
     })
 
     const darkModeToggle = document.getElementById('dark-mode-toggle')
+    const light = document.getElementById('light')
+    const lake = document.getElementById('lake')
     darkModeToggle.addEventListener('click', () => {
       document.body.classList.toggle('latex-dark')
+      light.innerHTML = document.body.classList.contains('latex-dark') ?
+        "<span style='color: orange'><i class='fa-solid fa-sun'></i></span>" :
+        "<span style='color: rgb(24, 49, 83)'><i class='fa-solid fa-moon'></i></span>"
+      lake.innerHTML = document.body.classList.contains('latex-dark') ?
+        "<img src='assets/lake-preview-dark.png' loading='lazy' alt='Lake Superior'/>" :
+        "<img src='assets/lake-preview-light.png' loading='lazy' alt='Lake Superior'/>"
     })
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
