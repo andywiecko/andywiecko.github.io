@@ -3,7 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <title>Andrzej Więckowski, Ph.D. — personal webpage</title>
   <meta charset="UTF-8" />
@@ -29,22 +29,19 @@ content: "[" counter(list-item) "]\2003";
     <h1><span class="latex">Andrzej Więckowski, Ph.D.</h1>
   </header>
 
-  <div class="abstract" style="text-align: justify;">
-    <h2 style="text-align: center;">Abstract</h2>
-      <blockquote>
-          Welcome to the personal webpage of Andrzej Więckowski, a software developer with a strong academic background. 
-          As a software developer, Andrzej is currently focused on simulations and game engines, leveraging his expertise in both programming and physics to contribute to innovative projects in the field. 
-      </blockquote>
-  </div>
+  <center>
+    <button id="home-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-house"></i></button>
 
-  <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa fa-github fa-lg"></i> andywiecko</button>
+    <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
 
-  <button id="dark-mode-toggle">Toggle dark mode</button>
+    <button onclick="location.href='https://github.com/sponsors/andywiecko'">
+      <span style="color: #db61a2"><i class="fa fa-regular fa-heart fa-lg"></i></span> Sponsor
+    </button>
 
-  <button id="typeface-toggle">Current typeface: <span id="typeface">Latin Modern</span></button>
+    <button id="typeface-toggle"><i class="fa-solid fa-font"></i></button>
 
-  <button onclick="location.href='index.html'" type="button">Home</button>
-
+    <button id="dark-mode-toggle"><span id="light" style='color: rgb(24, 49, 83)'><i class="fa-solid fa-moon"></i></span></button>
+  </center>
   <nav role="navigation" class="toc">
     <h2>Contents</h2>
     <ol>
@@ -479,12 +476,19 @@ content: "[" counter(list-item) "]\2003";
     const typeface = document.getElementById('typeface')
     typeFaceToggle.addEventListener('click', () => {
       document.body.classList.toggle('libertinus')
-      typeface.textContent = document.body.classList.contains('libertinus') ? 'Libertinus' : 'Latin Modern'
     })
 
     const darkModeToggle = document.getElementById('dark-mode-toggle')
+    const light = document.getElementById('light')
+    const lake = document.getElementById('lake')
     darkModeToggle.addEventListener('click', () => {
       document.body.classList.toggle('latex-dark')
+      light.innerHTML = document.body.classList.contains('latex-dark') ?
+        "<span style='color: orange'><i class='fa-solid fa-sun'></i></span>" :
+        "<span style='color: rgb(24, 49, 83)'><i class='fa-solid fa-moon'></i></span>"
+      lake.innerHTML = document.body.classList.contains('latex-dark') ?
+        "<img src='assets/lake-preview-dark.png' loading='lazy' alt='Lake Superior'/>" :
+        "<img src='assets/lake-preview-light.png' loading='lazy' alt='Lake Superior'/>"
     })
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
