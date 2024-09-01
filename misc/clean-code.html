@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <title>Andrzej Więckowski, Ph.D. — personal webpage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:url" content="https://andywiecko.github.io/" />
+  <meta property="og:type" content="website" />
+</head>
+
+<style>
+ol.bibliography > li::marker {
+content: "[" counter(list-item) "]\2003";
+}
+.section {
+  font-weight: bold;
+}
+.subsection {
+  font-weight: normal;
+}
+</style>
+
+<body id="top">
+  <header>
+    <h1><span class="latex">Andrzej Więckowski, Ph.D.</h1>
+  </header>
+
+  <center>
+    <button id="home-toggle" onclick="location.href='../index.html'"><i class="fa-solid fa-house"></i></button>
+
+    <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
+
+    <button onclick="location.href='https://github.com/sponsors/andywiecko'">
+      <span style="color: #db61a2"><i class="fa fa-regular fa-heart fa-lg"></i></span> Sponsor
+    </button>
+
+    <button id="typeface-toggle"><i class="fa-solid fa-font"></i></button>
+
+    <button id="dark-mode-toggle"><span id="light" style='color: rgb(24, 49, 83)'><i class="fa-solid fa-moon"></i></span></button>
+  </center>
+
+
+  <p class="author"><br> 04.01.2023</p>
+  <main>
+    <article>
+
+<h2 id="1.1">clean code = shit</h2>
+
+<p>
+  Przestańmy korzystać z określenia <em>czysty</em> jako przymiotnik do kodu.
+  Jak słyszę clean code to zaczyna mną telepać – to sformułowanie powinno zostać zakazane w środowisku IT.
+  W świecie programowania nastała moda na używanie tego określenia, a w zasadzie problem zaczyna powoli przypominać religię.
+  Nastała tendencja do utrudniania sobie życia np. poprzez wprowadzanie dodatkowych abstrakcji tam gdzie nie potrzeba, zakazywanie niektórych wzorców, czy dążenie do całkowitego „niepowtarzania kodu”.
+</p>
+
+<p>
+  Pytanie co to w ogóle jest <em>clean code</em>? Według Wiktionary definicja <em>clean code</em> jest następująca: „Non-redundant software code comprising of focussed task-specific modules and functions, written in a systematic manner so that another coder can easily interpret or modify it”.
+  Ta definicja jest dość abstrakcyjna i raczej nie można wyciągnąć z niej jednoznacznych wniosków dotyczących tego, jakie (globalne) standardy ma posiadać oprogramowanie.
+  Te słowa można interpretować na wiele sposobów.
+</p>
+
+<p>
+  Początkujący programiści często popadają w pułapkę „czystego kodu”.
+  Na bootcampach, czy filmikach na youtube/udemy poznają czyjąś wersję clean code.
+  Często to są głupoty, które w rzeczywistym świecie tworzenia oprogramowania nie mają sensu.
+  Ci adepci programowania zaczynają traktować dogmaty clean code jako prawdę absolutną, gdzie jakiekolwiek odstępstwa są niedopuszczalne.
+</p>
+
+<p>
+  Często ten problem zaczyna się na początku nauki.
+  Nierzadko jest tak, że treści edukacyjne (na youtube/udemy) są tworzone przez mało doświadczonych programistów, w tym tutoriale dotyczące „czystego kodu”.
+  Bardzo ciężko znaleźć materiały tworzone przez profesjonalistów i dlatego łatwo wpaść w pułapkę indoktryny <em>clean code</em>.
+</p>
+
+<p>
+  Jeden z gorszych nawyków wpajanych przez patoclean coderów, to podział kodu na jak najmniejsze funkcje.
+  Widziałem wiele MRek gdzie juniorki podążając za tą zasadą, napisały algorytm, który nie podzielony zajmuje 5 linijek, a po ich przetworzeniu każda linijka dostała przypisaną do siebie funkcje, mało znaczącą nazwę tej funkcji. Później czytając implementacje algorytmu, konsument musi skakać z funkcji do funkcji z redundantnymi <em>summary</em>.
+  Kończy się na tym, że algorytm 5 linijkowy jest zapisany w 50 linijkach (o ile juniorek nie porozbija tego na pare plików i doda  do tego jeszcze jakiś interfejs, bo wiadomo abstrakcje fajne).
+  Oczywiście zgadzam się, że podział na funkcje/metody jest ważny i potrzebny, ale trzeba mieć do tego wyczucie i zachowywać balans pomiędzy czytelnością i granulacją.
+</p>
+
+<p>
+  Podobnie sytuacja wypada w przypadku podziału na wiele plików.
+  Dla niektórych czysty kod to taki, gdzie każdy typ umieszczony jest w osobnym pliku.
+  Osobiście, również dzielę projekt na wiele plików, ale należy przy tym pamiętać o robieniu tego z umiarem.
+  Znowu podział na wiele małych plików sprowadza się do porządku lokalnego, ale często może prowadzić do bałaganu globalnego.
+  Róbmy to z rozsądkiem.
+  Warto tutaj zwrócić uwagę, dla przykładu w języku <code>C++</code>, często spotkać się można z tzw. <em>header only libs</em>, gdzie cały projekt zamieszczony jest w pojedynczym pliku.
+  Nikt im nie robi wrzut, że czyściej byłoby podzielić pakiet na małe pliki.
+</p>
+
+<p>
+  Wiele osób z <em>clean code</em> bezpośrednio kojarzy wzorce projektowe, tzw. <em>design patterns</em>.
+  Design patterny, kiedy są nadużywane lub używane źle, mogą być objawem choroby clean code.
+  To samo dotyczy bezpośrednio wzorców projektowych. Weźmy np. <em>singleton</em>, przez wielu postrzegany jako antypatern, który można wyeliminować. To samo dotyczy wszelkiego rodzaju globalnych/statycznych obiektów.
+  Zgadzam się, że w większości przypadków używanie singletonu to zły pomysł, ale istnieje też wiele sytuacji, kiedy singleton może okazać się niesamowicie przydatny i może się okazać najlepszym rozwiązaniem danego problemu. Podkreślam, użycie przymiotnika „najlepszym”, nie „najczystszym”. Nie wiem w jaki sposób można zmierzyć czystość wykorzystania singletona w danym projekcie.
+</p>
+
+<p>
+  Wiele osób kojarzy „clean code” z pewnymi zasadami typu SOLID, DRY, GRASP, KISS, YAGNI, itd.
+  Nie twierdzę, że te zasady są złe, a jedynie stwierdzam fakt, że te zasady nie są prawdą absolutną, są jedynie wskazówkami podczas tworzenia oprogramowania.
+  Są szczególnie istotne podczas nauki, gdzie można dowiedzieć się czego warto unikać, ale nie są tak bardzo istotne w życiu codziennym programisty.
+  W normalnej współpracy, współpracownicy podczas review nie powinni wytykać „tutaj złamana zasada D z SOLID, tutaj piszemy tylko czysty kod”.
+  Kolejny raz określenie „czysty” nie ma najmniejszego sensu.
+  Jakbyśmy zrobili eksperyment myślowy, przygotowali „brudny” kod do recenzji i jako recenzentów wzięlibyśmy programistów z odpowiednio programowania funkcyjnego, obiektowego czy <em>data oriented</em> zaobserwowalibyśmy na pewno ciekawy pojedynek.
+  Ciekawi mnie, czy zaczęły by się dyskusje o „czystość” rozwiązania.
+  Ten eksperyment pięknie pokazuje, dlaczego nie powinniśmy używać określenia „czysty kod”.
+</p>
+
+<p>
+Wracając do zasady DRY, ta zasada wymaga szczególnego komentarza.
+„Czysto pisarze” mają tutaj tendencję do nadużywania tej zasady.
+Tu nie chodzi o to, żeby w projekcie nie było żadnych powtórzeń.
+I kolejny raz natrafimy na kwiatki podczas review: „wynieś to do statycznego <em>utilsa</em>, będzie czyściej”.
+Pojawia się pytanie ile razy wykorzystamy tego <em>utilsa</em>?
+Teraz pojawia się problem, że staramy się sprzątać projekt lokalnie i to sprzątanie prowadzi do bałaganu globalnego w projekcie.
+</p>
+
+<p>
+  Mam wrażenie, że często wyznawcy „clean code” prześcigają się kto zrobi „czystszy kod”.
+  To prowadzi do absurdalnych rozwiązań, a w zasadzie do marnowania czasu i potencjału.
+  Ile pożytecznych funkcjonalności można by przygotować za ten zmarnowany czas na „doskonalenie doskonałości”.
+  Na GitHub można znaleźć perełki gdzie użytkownicy przygotowują parodię takiego podejścia.
+  Świetny przykład można znaleźć tutaj <a href="https://github.com/EnterpriseQualityCoding/FizzBuzzEnterpriseEdition">[1]</a>.
+</p>
+
+<p>
+  Jednak wydaje mi się, że największym problemem patoclean coderów jest podeście do „czystego” nazywania rzeczy (typów, zmiennych, metod, itd.).
+  Nazewnictwo jest ekstremalnie ważne podczas tworzenia oprogramowania.
+  Jednak niektórych cechuje ekstremizm do tworzenia nazw które są zbyt <em>verbose</em>, co prowadzi do takich patusów jak: <code>GetCountriesFromAsiaWhereAreTheMostPlanesAndBoats</code>.
+  Założeniem autora, nazwa miała być <em>clean</em>, tłumacząca wszystko co robi dana metoda.
+  To można skomentować jednym zdaniem: to jest po prostu do dupy.
+  Problem długich nazw można rozwiązać odpowiednią „architekturą”, albo odpowiednio udokumentować kod.
+  Absurdem jest też opinia niektórych programersów, że zmiennej do indeksowania w pętli nie można nazywać symbolami <code>i,j,k</code>, tylko trzeba używać bardziej <em>verbose</em> typu <code>index</code>.
+</p>
+
+<p>
+  Kolejnym problemem jest twierdzenie, że czysty kod nie posiada komentarzy, że nazewnictwo i stylistyka jest samodokumentującym się bytem.
+  To jest prawdopodobnie źródłem tych bydlastych nazw z poprzedniego akapitu.
+  Projekty potrzebują dokumentacji i komentarzy.
+  Większość programistów nie wie, czym różni się dokumentacja od komentarzy.
+  Osobiście uważam, że nadmiarowe komentarze są złą praktyką.
+  Wstawiam komentarze wtedy, kiedy coś jest potrzebne do sprecyzowania (np. w czym wyrażony jest dany parametr radiany, czy stopnie) lub kiedy chce opisać co się dzieje w „skomplikowanym”, czy hackowatym kodzie.
+</p>
+
+<p>
+  Niektórzy twierdzą, że czysty kod powinno móc się wydrukować i czytając ktoś będzie wiedział co ten kod robi.
+  To jest jedna z głupszych opinii jakie słyszałem.
+  Żyjemy w XXI wieku.
+  IDE to podstawowe narzędzie programisty.
+  Nie da się wykonać efektywnie porządnego review w przeglądarce internetowej.
+  <em>Checkout</em>ujcie i <em>review</em>ujcie w narzędziach z których korzystacie.
+</p>
+
+<p>
+  Odnoszę wrażenie, że część ludzi traktuje tworzenie oprogramowania jak sztukę, stąd nawiązanie do zwrotu „czysty kod”.
+  W mojej opinii jest to całkowicie błędne stwierdzenie.
+  Dla mnie pisanie kodu to bardziej rzemiosło, porównałbym to bardziej do wykończeniówki czy do budowlanki, a nie artysty malującego obraz.
+  Kod ma działać, ma być funkcjonalny, łatwy w modyfikacji.
+  Na pewno nie powinniśmy mierzyć jakości kodu jego „pięknem”.
+</p>
+
+<p>
+  Osobiście podczas pisania programów wyznaję zasadę „the simpler, the better”.
+  W większości przypadków to się sprawdza.
+  Należy tutaj podkreślić, że powinno się utrzymywać odpowiedni balans pomiędzy powtórzeniami kodu i prostotą.
+  Kończąc ten artykulik chciałbym do Ciebie zaapelować: nie używaj zwrotu „clean code” do określania jakości oprogramowania.
+  Jak robisz komuś <em>review</em> i zauważysz rozwiązanie, które Twoim zdaniem nie jest najlepszym podejściem w tej sytuacji napisz: „uważam, że w tym przypadku lepszym rozwiązaniem byłoby zastosowanie X a nie Y”.
+  Opisana opinia związana z czystym kodem nie należy tylko do mnie.
+  Tutaj możesz znaleźć podobne zdanie w tej kwestii <a href="https://www.steveonstuff.com/2022/01/27/no-such-thing-as-clean-code">[2]</a>.
+</p>
+
+<h2>Bibliografia</h2>
+
+[1]: <a href="https://github.com/EnterpriseQualityCoding/FizzBuzzEnterpriseEdition">
+  <code>https://github.com/EnterpriseQualityCoding/FizzBuzzEnterpriseEdition</code>
+  </a>
+
+<br>
+[2]: <a href="https://www.steveonstuff.com/2022/01/27/no-such-thing-as-clean-code">
+  <code>https://www.steveonstuff.com/2022/01/27/no-such-thing-as-clean-code</code>
+</a>
+
+    </article>
+</main>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'],],
+    },
+  }
+  const typeFaceToggle = document.getElementById('typeface-toggle')
+  const typeface = document.getElementById('typeface')
+  typeFaceToggle.addEventListener('click', () => {
+    document.body.classList.toggle('libertinus')
+  })
+
+  const darkModeToggle = document.getElementById('dark-mode-toggle')
+  const light = document.getElementById('light')
+  const lake = document.getElementById('lake')
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('latex-dark')
+    light.innerHTML = document.body.classList.contains('latex-dark') ?
+      "<span style='color: orange'><i class='fa-solid fa-sun'></i></span>" :
+      "<span style='color: rgb(24, 49, 83)'><i class='fa-solid fa-moon'></i></span>"
+    lake.innerHTML = document.body.classList.contains('latex-dark') ?
+      "<img src='assets/lake-preview-dark.png' loading='lazy' alt='Lake Superior'/>" :
+      "<img src='assets/lake-preview-light.png' loading='lazy' alt='Lake Superior'/>"
+  })
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
