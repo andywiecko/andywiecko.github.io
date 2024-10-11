@@ -30,6 +30,8 @@ content: "[" counter(list-item) "]\2003";
   </header>
 
   <center>
+    <button id="blog-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-left-long"></i></button>
+
     <button id="home-toggle" onclick="location.href='../index.html'"><i class="fa-solid fa-house"></i></button>
 
     <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
@@ -131,7 +133,7 @@ Teraz pojawia się problem, że staramy się sprzątać projekt lokalnie i to sp
 <p>
   Jednak wydaje mi się, że największym problemem patoclean coderów jest podeście do „czystego” nazywania rzeczy (typów, zmiennych, metod, itd.).
   Nazewnictwo jest ekstremalnie ważne podczas tworzenia oprogramowania.
-  Jednak niektórych cechuje ekstremizm do tworzenia nazw które są zbyt <em>verbose</em>, co prowadzi do takich patusów jak: <code>GetCountriesFromAsiaWhereAreTheMostPlanesAndBoats</code>.
+  Jednak niektórych cechuje ekstremizm do tworzenia nazw które są zbyt <em>verbose</em>, co prowadzi do takich patusów jak: <code style="word-wrap:break-word;">GetCountriesFromAsiaWhereAreTheMostPlanesAndBoats</code>.
   Założeniem autora, nazwa miała być <em>clean</em>, tłumacząca wszystko co robi dana metoda.
   To można skomentować jednym zdaniem: to jest po prostu do dupy.
   Problem długich nazw można rozwiązać odpowiednią „architekturą”, albo odpowiednio udokumentować kod.
@@ -176,16 +178,23 @@ Teraz pojawia się problem, że staramy się sprzątać projekt lokalnie i to sp
 
 <p style="text-align: right;"><a href="#top">[Top]</a></p>
 
+<button id="blog-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-left-long"></i></button>
+
 <h2>Bibliografia</h2>
-
-[1]: <a href="https://github.com/EnterpriseQualityCoding/FizzBuzzEnterpriseEdition">
-  <code>https://github.com/EnterpriseQualityCoding/FizzBuzzEnterpriseEdition</code>
-  </a>
-
-<br>
-[2]: <a href="https://www.steveonstuff.com/2022/01/27/no-such-thing-as-clean-code">
-  <code>https://www.steveonstuff.com/2022/01/27/no-such-thing-as-clean-code</code>
-</a>
+<p>
+  <ol class="bibliography">
+    <li>
+      <a style="word-wrap:break-word;" href="https://github.com/EnterpriseQualityCoding/FizzBuzzEnterpriseEdition">
+        <code>https://github.com/EnterpriseQualityCoding/FizzBuzzEnterpriseEdition</code>
+      </a>
+    </li>
+    <li>
+      <a style="word-wrap:break-word;" href="https://www.steveonstuff.com/2022/01/27/no-such-thing-as-clean-code">
+        <code>https://www.steveonstuff.com/2022/01/27/no-such-thing-as-clean-code</code>
+      </a>
+    </li>
+  </ol>
+</p>
 
     </article>
 </main>
