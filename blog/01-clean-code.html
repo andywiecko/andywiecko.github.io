@@ -36,11 +36,11 @@ content: "[" counter(list-item) "]\2003";
 
     <button id="home-toggle" onclick="location.href='../index.html'"><i class="fa-solid fa-house"></i></button>
 
-    <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
-
     <button onclick="location.href='https://github.com/sponsors/andywiecko'">
       <span style="color: #db61a2"><i class="fa fa-regular fa-heart fa-lg"></i></span> Sponsor
     </button>
+
+    <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
 
     <button id="typeface-toggle"><i class="fa-solid fa-font"></i></button>
 
@@ -225,15 +225,11 @@ Teraz pojawia się problem, że staramy się sprzątać projekt lokalnie i to sp
 
   const darkModeToggle = document.getElementById('dark-mode-toggle')
   const light = document.getElementById('light')
-  const lake = document.getElementById('lake')
   darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('latex-dark')
     light.innerHTML = document.body.classList.contains('latex-dark') ?
       "<span style='color: orange'><i class='fa-solid fa-sun'></i></span>" :
       "<span style='color: rgb(24, 49, 83)'><i class='fa-solid fa-moon'></i></span>"
-    lake.innerHTML = document.body.classList.contains('latex-dark') ?
-      "<img src='assets/lake-preview-dark.png' loading='lazy' alt='Lake Superior'/>" :
-      "<img src='assets/lake-preview-light.png' loading='lazy' alt='Lake Superior'/>"
   })
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

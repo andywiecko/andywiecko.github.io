@@ -36,11 +36,11 @@ content: "[" counter(list-item) "]\2003";
 
     <button id="home-toggle" onclick="location.href='../index.html'"><i class="fa-solid fa-house"></i></button>
 
-    <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
-
     <button onclick="location.href='https://github.com/sponsors/andywiecko'">
       <span style="color: #db61a2"><i class="fa fa-regular fa-heart fa-lg"></i></span> Sponsor
     </button>
+
+    <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
 
     <button id="typeface-toggle"><i class="fa-solid fa-font"></i></button>
 
@@ -76,7 +76,7 @@ content: "[" counter(list-item) "]\2003";
   Jaki jest sens wykorzystywania skomplikowanej sieci neuronowej, która działa jak czarna skrzynka (nie znamy interpretacji tych parametrów), jeśli wystarczy nauczyć się rachunku różniczkowego, całkowego, metod numerycznych i trochę starej dobrej mechaniki klasycznej?
 </p>
 <figure id="barberheimer">
-  <img style="margin-left: auto; margin-right: auto;" src="assets/02-ai-meme1.jpeg" loading="lazy" alt="Andrzej Więckowski" width="500" />
+  <img style="margin-left: auto; margin-right: auto;" src="assets/02-ai-meme1.jpeg" loading="lazy" alt="meme1" width="500" />
   <figcaption>
     Poważna nagroda Nobla przyznana w 2024 roku.
   </figcaption>
@@ -97,7 +97,7 @@ content: "[" counter(list-item) "]\2003";
 </p>
 
 <figure id="energy-1">
-  <img style="margin-left: auto; margin-right: auto;" src="assets/02-ai-co2.png" loading="lazy" alt="Andrzej Więckowski" width="500" />
+  <img style="margin-left: auto; margin-right: auto;" src="assets/02-ai-co2.png" loading="lazy" alt="co2" width="500" />
   <figcaption>
     Zadania przeanalizowane w badaniu oraz średnia ilość emisji dwutlenku węgla, jaką generowały (w gramach <em>CO</em><sub>2</sub><em>eq</em>) na 1’000 zapytań.
     Uwaga: Oś $Y$ jest w skali logarytmicznej
@@ -113,7 +113,7 @@ content: "[" counter(list-item) "]\2003";
   Wysuwając śmiałe założenia, można się pokusić o stwierdzenie, że wprowadzenie optymalizacji oprogramowania mogłoby zmniejszyć zapotrzebowanie energetyczne o ponad 95%, jednocześnie zwiększając efektywność czasową.
 </p>
 <figure id="energy-2">
-  <img style="margin-left: auto; margin-right: auto;" src="assets/02-energy.jpg" loading="lazy" alt="Andrzej Więckowski" width="500" />
+  <img style="margin-left: auto; margin-right: auto;" src="assets/02-energy.jpg" loading="lazy" alt="energy" width="500" />
   <figcaption>
     Szacowane zużycie energii na jedno zapytanie dla różnych systemów opartych na AI w porównaniu ze standardowym wyszukiwaniem w Google
     <a href="#devries.2023" id="cite2">[2]</a>.
@@ -125,7 +125,7 @@ content: "[" counter(list-item) "]\2003";
   To szczególnie przygnębiające, biorąc pod uwagę, że lepsze efekty można by osiągnąć, zatrudniając specjalistów, zamiast bezrefleksyjnie inwestować w hardware i bezmyślnie trenować „czarne skrzynki” do aproksymacji kiepskich rozwiązań.
 </p>
 <figure>
-  <img style="margin-left: auto; margin-right: auto;" src="assets/02-ai-supremancy.png" loading="lazy" alt="Andrzej Więckowski" width="200" />
+  <img style="margin-left: auto; margin-right: auto;" src="assets/02-ai-supremancy.png" loading="lazy" alt="ai-supremancy" width="200" />
   <figcaption>
     Potężne AI rozpoczyna dominację nad gatunkiem ludzkim.
   </figcaption>
@@ -147,7 +147,7 @@ content: "[" counter(list-item) "]\2003";
   Nie wspominając już o tym, że większość ludzi i tak bez mrugnięcia okiem koloryzuje swoje CV oraz profile na „linkedinach” czy innych social mediach – ale to temat na osobny artykuł.
 </p>
 <figure>
-  <img style="margin-left: auto; margin-right: auto;" src="assets/02-ai-meme2.jpg" loading="lazy" alt="Andrzej Więckowski" width="500" />
+  <img style="margin-left: auto; margin-right: auto;" src="assets/02-ai-meme2.jpg" loading="lazy" alt="meme2" width="500" />
   <figcaption>
     AI w gotowości do przejęcia pracy grafików, designerów, oraz wielu artystów.
   </figcaption>
@@ -222,15 +222,11 @@ content: "[" counter(list-item) "]\2003";
 
   const darkModeToggle = document.getElementById('dark-mode-toggle')
   const light = document.getElementById('light')
-  const lake = document.getElementById('lake')
   darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('latex-dark')
     light.innerHTML = document.body.classList.contains('latex-dark') ?
       "<span style='color: orange'><i class='fa-solid fa-sun'></i></span>" :
       "<span style='color: rgb(24, 49, 83)'><i class='fa-solid fa-moon'></i></span>"
-    lake.innerHTML = document.body.classList.contains('latex-dark') ?
-      "<img src='assets/lake-preview-dark.png' loading='lazy' alt='Lake Superior'/>" :
-      "<img src='assets/lake-preview-light.png' loading='lazy' alt='Lake Superior'/>"
   })
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
