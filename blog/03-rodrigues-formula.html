@@ -136,10 +136,12 @@ $$
 A' = R(A-P) + P\,, \\[1ex]
 A'' = A' - [(A' - B)\cdot n] \, n\,, \\[1ex]
 (A' - A'')\cdot n > 0\,,\\[1ex]
-\theta \to \displaystyle\min_{\|\theta\|} R_u(\theta)\,.
+\theta \to \displaystyle\min_{\|\theta\|} R_u(\theta)\,,
 \end{cases}
 $$
 
+where $A'$ is $A$ after the application of rotation $R$,
+and $A''$ is $A'$ projected onto the plane defined by $B$ and $n$.
 From the first equation, we get
 
 $$ \| A' \|^2 + \|A''\|^2 - 2 A'\cdot A'' = r^2\,.$$
@@ -213,7 +215,7 @@ We are interested in the solution with the smallest absolute value that aligns w
 The condition $(A'-A'')\cdot n > 0$ can be reduced to:
 
 $$
-(A-B)\cdot n >0\,.
+(A'-B)\cdot n >0\,.
 $$
 
 Before solving the equation, it is useful to check a „quick exit” condition.
