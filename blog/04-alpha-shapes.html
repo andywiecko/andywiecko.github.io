@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+
+  <title>Andrzej Więckowski, Ph.D. — personal webpage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:url" content="https://andywiecko.github.io/" />
+  <meta property="og:type" content="website" />
+</head>
+
+<style>
+ol.bibliography > li::marker {
+content: "[" counter(list-item) "]\2003";
+}
+
+.step {
+  counter-increment: step-counter;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.step::before {
+    content: counter(step-counter) ": ";
+}
+
+.small-caps {
+    font-variant: small-caps;
+  }
+</style>
+
+<body id="top" class="text-justify">
+  <header>
+    <h1><span class="latex">Andrzej Więckowski, Ph.D.</h1>
+  </header>
+
+  <center>
+    <button id="blog-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-left-long"></i></button>
+
+    <button id="home-toggle" onclick="location.href='../index.html'"><i class="fa-solid fa-house"></i></button>
+
+    <button onclick="location.href='https://github.com/sponsors/andywiecko'">
+      <span style="color: #db61a2"><i class="fa fa-regular fa-heart fa-lg"></i></span> Sponsor
+    </button>
+
+    <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
+
+    <button id="typeface-toggle"><i class="fa-solid fa-font"></i></button>
+
+    <button id="dark-mode-toggle"><span id="light" style='color: rgb(24, 49, 83)'><i class="fa-solid fa-moon"></i></span></button>
+  </center>
+
+<p class="author"><br> 30.04.2025</p>
+<main><article>
+
+<h2>$\alpha$-shapes</h2>
+
+<p>
+  In this blog post, I want to show you an effective method for mesh reconstruction from point clouds.
+  No edge constraints are needed! No opaque AI black box—just an analytically controlled, user-defined solution.
+  Let me introduce you to $\alpha$-shapes [<a id="cite1" href="#edelsbrunner.1983">1</a>].
+</p>
+
+<h3>What is an $\alpha$-shape?</h3>
+
+<p>
+  $\alpha$-shapes are a generalization of the convex hull used in computational geometry to describe the “shape” of a set of points.
+  Every convex hull is an $\alpha$-shape, but not every $\alpha$-shape is a convex hull.
+  By adjusting the parameter $\alpha$, you can control the level of detail in the shape: larger values allow more concavity, while smaller values smooth the shape toward the convex hull (cf. Figure <a href="#figure1">1</a>).
+  This parameter also influences the formation of holes in the shape.
+</p>
+
+<figure id="figure1">
+  <img style="margin-left: auto; margin-right: auto;" src="assets/04-wiki.svg" loading="lazy" alt="convex hull wiki" width="600" />
+  <figcaption>Convex hull, $\alpha$-shape and minimal spanning tree of a bivariate data set [<a id="cite2" href="#wikipedia.sigbert">2</a>].</figcaption>
+</figure>
+
+<p>
+  In this post, I’ll focus on $\alpha$-shapes derived from Delaunay triangulation.
+  The algorithm for computing an $\alpha$-shape from a collection of points is relatively straightforward.
+  First, perform a Delaunay triangulation.
+  Then, apply a filter to remove any triangle whose circumradius satisfies the condition $R^2 > \alpha^{-1}$.
+  Algorithm <a href="#pseudo-code">1</a> shows a pseudocode version of the $\alpha$-shape filter.
+  Keep in mind that a proper implementation is significantly more complex.
+  You can visit <a href="https://github.com/andywiecko/BurstTriangulator">BurstTriangulator</a> package, which I authored, to see a complete example.
+  Note that this straightforward implementation is somewhat brute-force, in many applications, additional constraints on triangle removal should be considered. 
+  If $\alpha = 0$, then you immediately obtain the convex hull—no triangle is removed!
+</p>
+
+<p>
+<hr style="margin:0px;margin-top: 25px;">
+<b id="pseudo-code">Algorithm 1</b> $\alpha$-shape reconstruction
+<hr style="margin:0px;">
+<div class="step">$\mathcal T \gets $ <span class="small-caps">DelaunayTriangulation</span>$(\text{input points})$</div>
+<div class="step"><b>for each</b> triangle $t\in \mathcal T:$</div>
+<div class="step"><span style="margin-left: 25px;">$R \gets$ <span class="small-caps">CircumRadius</span>$(t)$ </span></div>
+<div class="step"><span style="margin-left: 25px;"><b>if</b> $R^2 > \alpha^{-1}$ </span></div>
+<div class="step"><span style="margin-left: 50px;"><span class="small-caps">RemoveTriangle</span>$(t)$</div>
+<hr style="margin:0px;margin-bottom:25px;">
+</p>
+
+<p>
+  Why does this work?
+  Essentially, Delaunay triangulation produces a triangle mesh that covers the convex hull of the input points.
+  Boundary triangles in this hull tend to have large circumradii ($R$), making them prime candidates for removal by the $\alpha$-shape filter.
+  By adjusting the $\alpha$ value, you control the size of features that are retained or removed.
+  Figure <a href="#figure2">2</a> illustrates an example of the algorithm: on the left, a triangulated collection of points; on the right, the resulting mesh after applying the $\alpha$-shape filter.
+</p>
+
+<figure id="figure2">
+<img style='margin-left: auto; margin-right: auto;' src='assets/04-alpha-shape-light.svg' loading='lazy' alt='alpha shape example' width='400'/>
+<figcaption>Schematic result of the $\alpha$-shape filter. On the left: triangulated input, on the right the result after triangle removal.</figcaption>
+</figure>
+
+<p>
+  Why not use triangle area instead?
+  The circumradius directly measures how “spread out” a triangle is.
+  A small circumradius means the triangle tightly encloses its vertices, which is desirable when identifying meaningful geometric features.
+  In contrast, triangle area can be misleading—it may be large for compact triangles (like equilateral ones) and small for long, thin triangles.
+  Therefore, area is not a reliable indicator of geometric tightness.
+  Using circumradius ensures the algorithm respects the geometry and topology implied by Delaunay triangulation, whereas area does not capture this structure effectively.
+</p>
+
+<h3>Applications</h3>
+
+<p>
+  One of the most common applications of $\alpha$-shapes is mesh reconstruction from point clouds.
+  In this process, the user doesn’t need to define complex constraints—mesh generation, including hole support, is controlled by a single parameter: $\alpha$.
+  In Figure <a href="#figure3">3</a>, you can see an animation where points are first triangulated, then the $\alpha$-shape filter is applied for various values of $\alpha$, progressively removing triangles.
+  While this method isn’t perfect, I believe the reconstruction of the letter “A” is a notable result!
+  The rules for triangle removal can also be easily customized to produce better or more interesting results, depending on the application.
+</p>
+
+<figure id="figure3">
+  <img style="margin-left: auto; margin-right: auto;" src="assets/04-reconstruction.gif" loading="lazy" alt="reconstruction" width="400" />
+  <figcaption>Animation showing the $\alpha$-shape filter applied for different values of $\alpha$.</figcaption>
+</figure>
+
+<p>
+  Another compelling application of $\alpha$-shapes is procedural mesh generation.
+  These meshes can be used in virtual environments—for example, as maps in RTS games or other genres that require dynamic world maps.
+  Figure <a href="#figure4">4</a> shows an animation of procedurally generated meshes using the $\alpha$-shape filter.
+  The process begins with generating random points within the unit square, followed by Delaunay triangulation.
+  Finally, the $\alpha$-shape filter is applied, along with additional settings to ensure a continuous, 1-colorable mesh.
+</p>
+
+<figure id="figure4">
+  <img style="margin-left: auto; margin-right: auto;" src="assets/04-procedural.gif" loading="lazy" alt="procedural" width="400" />
+  <figcaption>Example meshes procedurally generated using the $\alpha$-shape filter. Each frame corresponds to a different random seed.</figcaption>
+</figure>
+
+<p>
+  With the <a href="https://github.com/andywiecko/BurstTriangulator">BurstTriangulator</a> package, generating examples like the one in Figure <a href="#figure4">4</a> is straightforward.
+  Below is a minimal working example to show how it can be done.
+  Keep in mind that this implementation can be further optimized using <code>Unity.Burst</code> and, more importantly, extensively customized for various use cases.
+</p>
+
+<pre style="padding:0"><code class="language-cs">var random = new Unity.Mathematics.Random(seed: 42);
+var managedPositions = Enumerable.Range(0, 128).Select(_ => random.NextDouble2()).ToArray();
+using var positions = new NativeArray<double2>(managedPositions, Allocator.Persistent);
+using var triangulator = new Triangulator(Allocator.Persistent)
+{
+    Input = { Positions = positions },
+    Settings = {
+      UseAlphaShapeFilter = true,
+      AlphaShapeSettings =
+      {
+          Alpha = 500,
+          PreventWindmills = true, // Important for obtaining continous mesh!
+          ProtectPoints = true,
+      },
+    },
+};
+
+triangulator.Run();</code></pre>
+
+<h3>References</h3>
+<p>
+  <ol class="bibliography">
+    <li id="edelsbrunner.1983">
+      H. Edelsbrunner, D. Kirkpatrick, R. Seidel.
+      On the shape of a set of points in the plane.
+      <a href="https://doi.org/10.1109/TIT.1983.1056714"><em>IEEE Trans. Inf. Theory</em>, <b>29</b>(4): 551–559 (1983)</a>.
+      <a href="#cite1">↩</a>
+    </li>
+    <li id="wikipedia.sigbert">
+      <a href="https://en.wikipedia.org/wiki/Alpha_shape">Alpha shape</a>. <em>Wikipedia</em>. Retrieved April 25, 2025.
+      Figure authored by Sigbert, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons.
+      <a href="#cite2">↩</a>
+    </li>
+  </ol>
+</p>
+
+<p style="text-align: right;"><a href="#top">[Top]</a></p>
+
+<button id="blog-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-left-long"></i></button>
+
+</article>
+</main>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'],],
+    },
+  }
+  const typeFaceToggle = document.getElementById('typeface-toggle')
+  const typeface = document.getElementById('typeface')
+  typeFaceToggle.addEventListener('click', () => {
+    document.body.classList.toggle('libertinus')
+  })
+
+  const darkModeToggle = document.getElementById('dark-mode-toggle')
+  const light = document.getElementById('light')
+  const fig2 = document.getElementById('figure2')
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('latex-dark')
+    light.innerHTML = document.body.classList.contains('latex-dark') ?
+      "<span style='color: orange'><i class='fa-solid fa-sun'></i></span>" :
+      "<span style='color: rgb(24, 49, 83)'><i class='fa-solid fa-moon'></i></span>"
+    fig2.innerHTML = "<img style='margin-left: auto; margin-right: auto;' src=" +
+      (document.body.classList.contains('latex-dark') ? "'assets/04-alpha-shape-dark.svg'" : "'assets/04-alpha-shape-light.svg'") +
+      "loading='lazy' alt='alpha shape example' width='400'/>" +
+      "<figcaption>Schematic result of the \$\alpha\$-shape filter. On the left: triangulated input, on the right the result after triangle removal.</figcaption>"
+  })
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>hljs.highlightAll();</script>
+<script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
