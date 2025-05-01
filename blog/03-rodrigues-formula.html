@@ -74,9 +74,11 @@ content: "[" counter(list-item) "]\2003";
 <p>
   Rodrigues’ formula for a rotation $R$ by an angle $\theta$ around a direction $u$ is given by
 
-  $$
+  <div class="scroll-wrapper">
+    $$
     R = R_u(\theta) = \cos \theta \,\,\mathbb 1 + \sin\theta \,\,[u]_\times + (1- \cos \theta) \,\,u \otimes u\,,
-  $$
+    $$
+  </div>
 
   where $[u]_{\times}$ is the <em>cross matrix</em> defined as
 
@@ -93,9 +95,11 @@ content: "[" counter(list-item) "]\2003";
   As you can see, this form of rotation is composed solely of <em>abstract</em> operators, which can be used for analytical proofs.
   Applying this operator to any vector $v$ gives
 
+  <div class="scroll-wrapper">
   $$
 R\,\,v =  \cos \theta \,\,v + \sin\theta \,\,u\times v+ (1- \cos \theta)(u\cdot v)\,\, u\,.
   $$
+  </div>
 
   Similarly, we can construct a quaternion representation of the rotation $q$ using Euler’s formulas
 
@@ -148,19 +152,25 @@ $$ \| A' \|^2 + \|A''\|^2 - 2 A'\cdot A'' = r^2\,.$$
 
 Using the third equation, we can express $|A''|^2$ and $A'\cdot A''$:
 
+<div class="scroll-wrapper">
 $$ \|A''\|^2 = \|A'\|^2 + [(A'-B)\cdot n]^2 - 2 (A'-B)\cdot n \,(A' \cdot n)\,,$$
+</div>
 
+<div class="scroll-wrapper">
 $$ A'\cdot A'' = A' \cdot \left(A' - [(A' - B)\cdot n] \, n\right) = \|A'\|^2 - (A'-B)\cdot n \,(A' \cdot n)\,.$$
+</div>
 
 Returning to the first equation, we obtain
 
-$$
-\begin{align}
-r^2 &= \| A' \|^2 + \|A''\|^2 - 2 A'\cdot A'' =\\
-    &= \| A' \|^2 + \|A'\|^2 + [(A'-B)\cdot n]^2 - 2 (A'-B)\cdot n \,(A' \cdot n) - 2\|A'\|^2 + 2 (A'-B)\cdot n \,(A' \cdot n)=\\
-    &= [(A'-B)\cdot n]^2 = [(R(A-P)+P-B)\cdot n]^2\,.
-\end{align}
-$$
+<div class="scroll-wrapper">
+  $$
+  \begin{align}
+  r^2 &= \| A' \|^2 + \|A''\|^2 - 2 A'\cdot A'' =\\
+  &= \| A' \|^2 + \|A'\|^2 + [(A'-B)\cdot n]^2 - 2 (A'-B)\cdot n \,(A' \cdot n) - 2\|A'\|^2 + 2 (A'-B)\cdot n \,(A' \cdot n)=\\
+  &= [(A'-B)\cdot n]^2 = [(R(A-P)+P-B)\cdot n]^2\,.
+  \end{align}
+  $$
+</div>
 
 The final equation simplifies significantly
 
