@@ -280,7 +280,7 @@ public static int imin5(ref float4 v)
     This approach already results in fewer instructions than <tt>imin0</tt> or <tt>imin1</tt>.
 </p>
 
-<pre style="padding:0"><code class="language-x86asm">        # imin4
+<pre style="padding:0"><code class="language-x86asm">        # imin5
         vmovups           xmm0, xmmword ptr [rcx]
         vmovss            xmm1, dword ptr [rcx + 4]
         xor               edx, edx
@@ -310,7 +310,7 @@ public static int imin6(ref float4 v)
     This results in the shortest and most optimized assembly, utilizing several SIMD instructions.
 </p>
 
-<pre style="padding:0"><code class="language-x86asm">        # imin5
+<pre style="padding:0"><code class="language-x86asm">        # imin6
         vmovups           xmm0, xmmword ptr [rcx]
         vshufps           xmm1, xmm0, xmm0, 232
         vshufps           xmm0, xmm0, xmm0, 237
