@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/x86asm.min.js"></script>
+
+  <title>Andrzej Więckowski, Ph.D. — personal webpage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:url" content="https://andywiecko.github.io/" />
+  <meta property="og:type" content="website" />
+</head>
+
+<style>
+ol.bibliography > li::marker {
+content: "[" counter(list-item) "]\2003";
+}
+
+.step {
+  counter-increment: step-counter;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.step::before {
+    content: counter(step-counter) ": ";
+}
+
+.small-caps {
+    font-variant: small-caps;
+  }
+</style>
+
+<body id="top" class="text-justify">
+  <header>
+    <h1><span class="latex">Andrzej Więckowski, Ph.D.</h1>
+  </header>
+
+ <center>
+    <button id="blog-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-left-long"></i></button>
+
+    <button id="home-toggle" onclick="location.href='../index.html'"><i class="fa-solid fa-house"></i></button>
+
+    <button onclick="location.href='https://github.com/sponsors/andywiecko'">
+      <span style="color: #db61a2"><i class="fa fa-regular fa-heart fa-lg"></i></span> Sponsor
+    </button>
+
+    <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
+
+    <button id="typeface-toggle"><i class="fa-solid fa-font"></i></button>
+
+    <button id="dark-mode-toggle"><span id="light" style='color: rgb(24, 49, 83)'><i class="fa-solid fa-moon"></i></span></button>
+</center>
+
+<p class="author"><br> 09.06.2025</p>
+<main><article>
+
+<h2>Exploring Burst 1: <tt>imin</tt></h2>
+
+<p>
+    Burst is a great and powerful tool that enables low-level optimizations while keeping your code readable and maintainable.
+    I hope this marks the beginning of a series of blog posts in which I’ll share insights into how compiler can enhance performance through vectorization of mathematical utilities.
+    I’m not aiming to measure performance explicitly, but rather to examine the generated assembly code.
+</p>
+
+<h3><tt>imin(float4)</tt></h3>
+
+<p>
+    <tt>Unity.Mathematics</tt> offers a wide range of helper functions for mathematical operations.
+    The API includes overloads for many vector types such as <tt>float2/3/4</tt>, <tt>float2x2/3x3/4x4</tt>, <tt>quaternions</tt>, and more.
+    It provides <tt>min(float4, float4)</tt>  for computing the component-wise minimum of two <tt>float4</tt> vectors, and <tt>cmin(float4)</tt> to obtain the smallest component of a vector.
+    However, it lacks an <tt>imin(float4)</tt> function to return the index of the smallest component—a utility that can be quite useful.
+</p>
+<p>
+    In this post, we’ll explore how the <tt>Burst</tt> compiler handles various implementations of the <tt>imin(float4)</tt> function.
+    The following assembly code samples were generated using <tt>Unity.Burst@1.8.21</tt>.
+    Note that results may vary with different package versions.
+</p>
+
+<p>
+    Let’s begin with the simplest, most straightforward implementation: iterating through all components and selecting the index of the minimum value.
+</p>
+
+<pre style="padding:0"><code class="language-cs">[BurstCompile]
+public static int imin0(ref float4 v)
+{
+    var (id, min) = (0, v[0]);
+    for (int i = 1; i < 4; i++)
+    {
+        (id, min) = v[i] < min ? (i, v[i]) : (id, min);
+    }
+    return id;
+}</code></pre>
+
+<p>
+    Here is the compiled code:
+</p>
+
+<pre style="padding:0"><code class="language-x86asm">        # imin0 imin1
+        vmovss            xmm0, dword ptr [rcx]
+        vmovss            xmm1, dword ptr [rcx + 4]
+        xor               eax, eax
+        vucomiss          xmm0, xmm1
+        seta              al
+        vminss            xmm0, xmm1, xmm0
+        vmovss            xmm1, dword ptr [rcx + 8]
+        vucomiss          xmm0, xmm1
+        vminss            xmm0, xmm1, xmm0
+        mov               edx, 2
+        cmovbe            edx, eax
+        vucomiss          xmm0, dword ptr [rcx + 12]
+        mov               eax, 3
+        cmovbe            eax, edx</code></pre>
+
+<p>
+    Surprisingly, explicitly checking each component yields the same assembly code:
+</p>
+
+<pre style="padding:0"><code class="language-cs">[BurstCompile]
+public static int imin1(ref float4 v)
+{
+    var (id, min) = (0, v.x);
+    (id, min) = v.y < min ? (1, v.y) : (id, min);
+    (id, min) = v.z < min ? (2, v.z) : (id, min);
+    (id, min) = v.w < min ? (3, v.w) : (id, min);
+    return id;
+}</code></pre>
+
+<p>
+    Another approach is to first calculate the minimum value, then compare components to determine the matching index:
+</p>
+
+<pre style="padding:0"><code class="language-cs">[BurstCompile]
+public static int imin2(ref float4 v)
+{
+    var min = math.cmin(v);
+    if (v.x == min) return 0;
+    if (v.y == min) return 1;
+    if (v.z == min) return 2;
+    return 3;
+}</code></pre>
+
+<p>
+    As expected, this generates more complex assembly, including several jumps:
+</p>
+
+<pre style="padding:0"><code class="language-x86asm">        # imin2
+        vmovss            xmm1, dword ptr [rcx + 12]
+        vmovss            xmm2, dword ptr [rcx + 8]
+        vmovss            xmm3, dword ptr [rcx + 4]
+        vmovups           xmm0, xmmword ptr [rcx]
+        vminss            xmm4, xmm3, xmm0
+        vcmpunordss        xmm5, xmm0, xmm0
+        vblendvps         xmm3, xmm4, xmm3, xmm5
+        vcmpunordss        xmm4, xmm3, xmm3
+        vminss            xmm3, xmm2, xmm3
+        vblendvps         xmm2, xmm3, xmm2, xmm4
+        vcmpunordss        xmm3, xmm2, xmm2
+        vminss            xmm2, xmm1, xmm2
+        vblendvps         xmm1, xmm2, xmm1, xmm3
+        xor               eax, eax
+        vucomiss          xmm0, xmm1
+        jne               .LBB4_1
+        jp                .LBB4_1
+.Ltmp1:
+.LBB4_3:
+        pop               rbp
+        ret
+.LBB4_1:
+.Ltmp2:
+        vmovshdup         xmm2, xmm0
+        mov               eax, 1
+        vucomiss          xmm2, xmm1
+        jne               .LBB4_2
+        jnp               .LBB4_3
+.LBB4_2:
+        vshufpd           xmm0, xmm0, xmm0, 1
+        vcmpeqss          xmm0, xmm0, xmm1
+        vmovd             eax, xmm0
+        and               eax, 1
+        xor               eax, 3</code></pre>
+
+<p>
+    By using a component-wise equality check <tt>==</tt>, we can reduce the number of jumps:
+</p>
+
+<pre style="padding:0"><code class="language-cs">[BurstCompile]
+public static int imin3(ref float4 v)
+{
+    var r = math.cmin(v) == v;
+    if (r.x) return 0;
+    if (r.y) return 1;
+    if (r.z) return 2;
+    return 3;
+}</code></pre>
+
+<p>
+    The generated assembly is still large, but it’s more branchless compared to <tt>imin2</tt>:
+</p>
+
+<pre style="padding:0"><code class="language-x86asm">        # imin3 imin4
+        vmovss            xmm0, dword ptr [rcx + 12]
+        vmovss            xmm1, dword ptr [rcx + 8]
+        vmovss            xmm2, dword ptr [rcx + 4]
+        vmovups           xmm3, xmmword ptr [rcx]
+        vminss            xmm4, xmm2, xmm3
+        vcmpunordss        xmm5, xmm3, xmm3
+        vblendvps         xmm2, xmm4, xmm2, xmm5
+        vcmpunordss        xmm4, xmm2, xmm2
+        vminss            xmm2, xmm1, xmm2
+        vblendvps         xmm1, xmm2, xmm1, xmm4
+        vcmpunordss        xmm2, xmm1, xmm1
+        vminss            xmm1, xmm0, xmm1
+        vblendvps         xmm0, xmm1, xmm0, xmm2
+        vbroadcastss        xmm0, xmm0
+        vcmpeqps          xmm0, xmm0, xmm3
+        vpackssdw         xmm0, xmm0, xmm0
+        vpacksswb         xmm0, xmm0, xmm0
+        vpand             xmm0, xmm0, xmmword ptr [rip + __xmm@00000000000000000000000001010101]
+        vmovd             ecx, xmm0
+        xor               eax, eax
+        test              cl, cl
+        je                .LBB4_1
+.Ltmp1:
+.LBB4_3:
+        pop               rbp
+        ret
+.LBB4_1:
+.Ltmp2:
+        vpextrb           ecx, xmm0, 1
+        mov               eax, 1
+        test              ecx, ecx
+        jne               .LBB4_3
+        vpextrb           ecx, xmm0, 2
+        xor               eax, eax
+        cmp               cl, 1
+        adc               eax, 2</code></pre>
+
+<p>
+     The same behavior can be achieved using <tt>C#</tt> pattern matching:
+</p>
+
+<pre style="padding:0"><code class="language-cs">[BurstCompile]
+public static int imin4(ref float4 v)
+{
+    var r = math.cmin(v) == v;
+    return (r.x, r.y, r.z, r.w) switch
+    {
+        (true, _, _, _) => 0,
+        (_, true, _, _) => 1,
+        (_, _, true, _) => 2,
+        _ => 3,
+    };
+}</code></pre>
+
+<p>
+    To better leverage modern CPU instruction sets (SSE/AVX), we can break the problem into smaller parts using a <em>divide-and-conquer</em> approach:
+</p>
+
+<pre style="padding:0"><code class="language-cs">[BurstCompile]
+public static int imin5(ref float4 v)
+{
+    var id0 = v.x <= v.y ? 0 : 1;
+    var id1 = v.z <= v.w ? 2 : 3;
+    return v[id0] <= v[id1] ? id0 : id1;
+}</code></pre>
+
+<p>
+    Note: If you don’t care about the exact index in case of duplicate minimums, you can use <tt><</tt> instead of <tt><=</tt>.
+    In practice, exact duplicates in a float vector are rare, and returning any correct index is typically acceptable.
+</p>
+
+<p>
+    This approach already results in fewer instructions than <tt>imin0</tt> or <tt>imin1</tt>.
+</p>
+
+<pre style="padding:0"><code class="language-x86asm">        # imin4
+        vmovups           xmm0, xmmword ptr [rcx]
+        vmovss            xmm1, dword ptr [rcx + 4]
+        xor               edx, edx
+        vucomiss          xmm1, xmm0
+        setb              dl
+        vbroadcastss        xmm1, dword ptr [rcx + 12]
+        vcmpnleps         xmm0, xmm0, xmm1
+        vextractps        r8d, xmm0, 2
+        mov               eax, 2
+        sub               eax, r8d
+        vmovss            xmm0, dword ptr [rcx + 4*rax]
+        vucomiss          xmm0, dword ptr [rcx + 4*rdx]
+        cmovae            eax, edx</code></pre>
+
+<p>
+    Finally, we can fully vectorize <tt>imin5</tt> using <tt>math.select</tt>:
+</p>
+
+<pre style="padding:0"><code class="language-cs">[BurstCompile]
+public static int imin6(ref float4 v)
+{
+    var id = math.select(math.int2(1, 3), math.int2(0, 2), v.xz <= v.yw);
+    return v[id[0]] <= v[id[1]] ? id[0] : id[1];
+}</code></pre>
+
+<p>
+    This results in the shortest and most optimized assembly, utilizing several SIMD instructions.
+</p>
+
+<pre style="padding:0"><code class="language-x86asm">        # imin5
+        vmovups           xmm0, xmmword ptr [rcx]
+        vshufps           xmm1, xmm0, xmm0, 232
+        vshufps           xmm0, xmm0, xmm0, 237
+        vcmpleps          xmm0, xmm1, xmm0
+        vpaddd            xmm0, xmm0, xmmword ptr [rip + __xmm@00000000000000000000000300000001]
+        vmovd             eax, xmm0
+        vpextrd           edx, xmm0, 1
+        vmovss            xmm0, dword ptr [rcx + 4*rdx]
+        vucomiss          xmm0, dword ptr [rcx + 4*rax]
+        cmovb             eax, edx</code></pre>
+
+
+<h3>Summary</h3>
+
+<p>
+To summarize, <tt>imin6</tt> leverages SIMD for vectorized comparisons, which can significantly reduce latency by processing multiple elements in parallel.
+This method is especially efficient on modern <tt>x86-64</tt> CPUs with SSE or AVX support.
+Keep in mind that performance gains depend on CPU architecture and may vary across different platforms.
+When optimizing critical code paths in your game or simulation, it’s a good idea to take advantage of utilities from the <tt>math</tt> library.
+</p>
+
+<br>
+
+<center>
+<table>
+    <thead>
+        <tr>
+            <th>function</th>
+            <th>#instructions</th>
+            <th>#jumps</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="color:orange">
+            <td><tt>imin0</tt>, <tt>imin1</tt></td>
+            <td style="text-align: center;">14</td>
+            <td style="text-align: center;">0</td>
+        </tr>
+        <tr style="color:red">
+            <td><tt>imin2</tt></td>
+            <td style="text-align: center;">29</td>
+            <td style="text-align: center;"><b>4</b></td>
+        </tr>
+        <tr style="color:red">
+            <td><tt>imin3</tt>, <tt>imin4</tt></td>
+            <td style="text-align: center;"><b>32</b></td>
+            <td style="text-align: center;">2</td>
+        </tr>
+        <tr style="color:orange;">
+            <td><tt>imin5</tt></td>
+            <td style="text-align: center;">13</td>
+            <td style="text-align: center;">0</td>
+        </tr>
+        <tr style="color: rgb(136, 212, 20)">
+            <td><tt>imin6</tt></td>
+            <td style="text-align: center;"><b>10</b></td>
+            <td style="text-align: center;">0</td>
+        </tr>
+    </tbody>
+</table>
+</center>
+
+<br>
+
+<p style="text-align: right;"><a href="#top">[Top]</a></p>
+
+<button id="blog-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-left-long"></i></button>
+
+</article>
+</main>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'],],
+    },
+  }
+  const typeFaceToggle = document.getElementById('typeface-toggle')
+  const typeface = document.getElementById('typeface')
+  typeFaceToggle.addEventListener('click', () => {
+    document.body.classList.toggle('libertinus')
+  })
+
+  const darkModeToggle = document.getElementById('dark-mode-toggle')
+  const light = document.getElementById('light')
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('latex-dark')
+    light.innerHTML = document.body.classList.contains('latex-dark') ?
+      "<span style='color: orange'><i class='fa-solid fa-sun'></i></span>" :
+      "<span style='color: rgb(24, 49, 83)'><i class='fa-solid fa-moon'></i></span>"
+  })
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>hljs.highlightAll();</script>
+<script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
