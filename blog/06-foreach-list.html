@@ -72,7 +72,9 @@ content: "[" counter(list-item) "]\2003";
 </p>
 <p>
     The obvious downside is that users must remember to use either an extension method or a <tt>for</tt> loop.
-    Instead of worrying about these rules, one may simply stop worrying and learn to love <tt>List</tt>, as the blog title suggests.
+    Instead of worrying about these rules, one may simply stop worrying and learn to love <tt>List</tt><label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+<input type="checkbox" id="sn-1" class="sidenote-toggle"/><span class="sidenote">Ideally, <tt>ReadOnlySpan&lt;T&gt;</tt> would be the best choice here since it provides allocation-free iteration with read-only semantics.
+    Unfortunately, in Unity it is still inconvenient to use because casting from <tt>List&lt;T&gt;</tt> to <tt>ReadOnlySpan&lt;T&gt;</tt> is not straightforward.</span>, as the blog title suggests.
     This does not mean that <tt>IReadOnlyList</tt> should never be used.
     In most applications the GC allocation is negligible, but e.g. in Unity hot paths even small per-frame allocations may become problematic.
     Below you can find a simple Unity code sample that I used to measure and test GC allocations.
