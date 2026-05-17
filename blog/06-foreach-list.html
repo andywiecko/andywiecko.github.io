@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/x86asm.min.js"></script>
+
+  <title>Andrzej Więckowski, Ph.D. — personal webpage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:url" content="https://andywiecko.github.io/" />
+  <meta property="og:type" content="website" />
+</head>
+
+<style>
+ol.bibliography > li::marker {
+content: "[" counter(list-item) "]\2003";
+}
+
+.step {
+  counter-increment: step-counter;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.step::before {
+    content: counter(step-counter) ": ";
+}
+
+.small-caps {
+    font-variant: small-caps;
+  }
+</style>
+
+<body id="top" class="text-justify">
+  <header>
+    <h1><span class="latex">Andrzej Więckowski, Ph.D.</h1>
+  </header>
+
+ <center>
+    <button id="blog-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-left-long"></i></button>
+
+    <button id="home-toggle" onclick="location.href='../index.html'"><i class="fa-solid fa-house"></i></button>
+
+    <button onclick="location.href='https://github.com/sponsors/andywiecko'">
+      <span style="color: #db61a2"><i class="fa fa-regular fa-heart fa-lg"></i></span> Sponsor
+    </button>
+
+    <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
+
+    <button id="typeface-toggle"><i class="fa-solid fa-font"></i></button>
+
+    <button id="dark-mode-toggle"><span id="light" style='color: rgb(24, 49, 83)'><i class="fa-solid fa-moon"></i></span></button>
+</center>
+
+<p class="author"><br> 17.05.2026</p>
+<main><article>
+
+<h2>Dr. GCAlloc or: How I Learned to Stop Worrying and Love <tt>List&lt;T&gt;</tt></h2>
+
+<p> 
+    In this short blog entry, I will try to convince you that using the <tt>IReadOnlyList</tt> contract is sometimes not worth it.
+    Especially in hot paths or projects that require high runtime performance, it is often better to use the regular <tt>List</tt>.
+    The reason is the <tt>foreach</tt> loop, which unfortunately introduces GC allocations when used with <tt>IReadOnlyList</tt>, regardless of the underlying type.
+    Of course, users can avoid these allocations by using a regular <tt>for</tt> loop (or by providing a custom enumerator via an extension method).
+    However, this is somewhat counterintuitive, since <tt>foreach</tt> implies that the iterated collection is read-only and that modifying it will throw an exception.
+</p>
+<p>
+    The obvious downside is that users must remember to use either an extension method or a <tt>for</tt> loop.
+    Instead of worrying about these rules, one may simply stop worrying and learn to love <tt>List</tt>, as the blog title suggests.
+    This does not mean that <tt>IReadOnlyList</tt> should never be used.
+    In most applications the GC allocation is negligible, but e.g. in Unity hot paths even small per-frame allocations may become problematic.
+    Below you can find a simple Unity code sample that I used to measure and test GC allocations.
+</p>
+
+<pre style="padding:0"><code class="language-cs">using System.Collections.Generic;
+using System.Linq;
+using Unity.Profiling;
+using UnityEngine;
+
+public class GCExample : MonoBehaviour
+{
+    private IReadOnlyList&lt;int&gt; List => list;
+    private readonly List&lt;int&gt; list = new();
+
+    private void Start()
+    {
+        list.AddRange(Enumerable.Repeat(default(int), 64));
+    }
+
+    private void Update()
+    {
+        using (var _ = new ProfilerMarker(nameof(IReadOnlyList&lt;int&gt;)).Auto())
+        {
+            foreach (var i in List) { }
+        }
+
+        using (var _ = new ProfilerMarker(nameof(List&lt;int&gt;)).Auto())
+        {
+            foreach (var i in list) { }
+        }
+    }
+}</code></pre>
+
+<p>
+    After attaching the script to a <tt>GameObject</tt>, you can measure GC allocations using the Unity Profiler.
+    The results are presented in <a href="#figure1">Figure 1</a>.
+    An empty <tt>foreach</tt> loop over <tt>IReadOnlyList</tt> allocates 40B every frame.
+    In contrast, a <tt>foreach</tt> loop over a regular <tt>List</tt> allocates 0B.
+</p>
+
+<br>
+
+<figure id="figure1">
+  <img style="margin-left: auto; margin-right: auto;" src="assets/06-foreach-list-01.png" loading="lazy" alt="profiler" width="600" />
+  <figcaption>The result of the code snippet shown in Unity’s Profiler.</figcaption>
+</figure>
+
+<br>
+
+<p>
+    One may ask: what is the reason for this behavior?
+    The answer becomes immediately clear after inspecting the code to which the <tt>foreach</tt> loop compiles.
+    You can check this yourself using tools such as <a href="https://sharplab.io/">SharpLab</a> or other IL inspection tools.
+    A <tt>List</tt> uses <tt>List&lt;T&gt;.Enumerator</tt>, which is allocation-free enumeration struct.
+    In contrast, <tt>IReadOnlyList</tt> uses <tt>IEnumerator&lt;T&gt;</tt> contract.
+    The allocation happens because iteration over the interface-based <tt>IEnumerator&lt;T&gt;</tt>. 
+    This prevents the compiler from using the allocation-free struct enumerator provided by <tt>List&lt;T&gt;</tt>,
+    which in turn causes boxing and GC allocations.
+</p>
+
+<br>
+
+<p style="text-align: right;"><a href="#top">[Top]</a></p>
+
+<button id="blog-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-left-long"></i></button>
+
+</article>
+</main>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'],],
+    },
+  }
+  const typeFaceToggle = document.getElementById('typeface-toggle')
+  const typeface = document.getElementById('typeface')
+  typeFaceToggle.addEventListener('click', () => {
+    document.body.classList.toggle('libertinus')
+  })
+
+  const darkModeToggle = document.getElementById('dark-mode-toggle')
+  const light = document.getElementById('light')
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('latex-dark')
+    light.innerHTML = document.body.classList.contains('latex-dark') ?
+      "<span style='color: orange'><i class='fa-solid fa-sun'></i></span>" :
+      "<span style='color: rgb(24, 49, 83)'><i class='fa-solid fa-moon'></i></span>"
+  })
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>hljs.highlightAll();</script>
+<script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
