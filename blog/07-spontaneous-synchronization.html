@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/x86asm.min.js"></script>
+
+  <title>Andrzej Więckowski, Ph.D. — personal webpage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:url" content="https://andywiecko.github.io/" />
+  <meta property="og:type" content="website" />
+</head>
+
+<style>
+ol.bibliography > li::marker {
+content: "[" counter(list-item) "]\2003";
+}
+
+.step {
+  counter-increment: step-counter;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.step::before {
+    content: counter(step-counter) ": ";
+}
+
+.small-caps {
+    font-variant: small-caps;
+  }
+</style>
+
+<body id="top" class="text-justify">
+  <header>
+    <h1><span class="latex">Andrzej Więckowski, Ph.D.</h1>
+  </header>
+
+ <center>
+    <button id="blog-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-left-long"></i></button>
+
+    <button id="home-toggle" onclick="location.href='../index.html'"><i class="fa-solid fa-house"></i></button>
+
+    <button onclick="location.href='https://github.com/sponsors/andywiecko'">
+      <span style="color: #db61a2"><i class="fa fa-regular fa-heart fa-lg"></i></span> Sponsor
+    </button>
+
+    <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
+
+    <button id="typeface-toggle"><i class="fa-solid fa-font"></i></button>
+
+    <button id="dark-mode-toggle"><span id="light" style='color: rgb(24, 49, 83)'><i class="fa-solid fa-moon"></i></span></button>
+</center>
+
+<p class="author"><br> 21.06.2026</p>
+<main><article>
+
+<h2>Spontaneous synchronization</h2>
+
+<p>
+    Have you ever heard of <i>spontaneous synchronization</i>?
+    It is a remarkable physical phenomenon, however, the mathematical model commonly used to describe this behavior is not immediately obvious.
+    Below you can find an example video from the UCLA Department of Physics & Astronomy.
+</p>
+
+<div class="video-container" style="justify-self: center;">
+  <iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/T58lGKREubo"
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen>
+  </iframe>
+</div>
+
+<br>
+
+<h3>Kuramoto model</h3>
+
+<p>
+In the literature, this problem is often described using the Kuramoto model [<a id="cite1" href="#wikipedia.kuramoto">1</a>].
+The model describes the dynamics of a set of coupled oscillators through interaction couplings $K_{ij}$ and intrinsic frequencies $\omega_i$,
+</p>
+
+$$
+\dot \theta_i = \omega_i + \sum_{j\in \mathcal N_i} K_{ij} \sin(\theta_j - \theta_i + \alpha),
+$$
+
+<p>
+  where $\mathcal N_i$ denotes the neighborhood of node $i$, and $\alpha$ is a parameter related to <i>frustration</i>.
+  The latter parameter is used to represent delays or non-ideal interactions between oscillators and is crucial for the emergence of non-trivial structures such as waves and chimera states.
+  From a physicist’s perspective, this model is particularly remarkable because of its similarity to classical models from condensed matter physics, such as the <it>Ising</it> and $XY$ models.
+  Moreover, many of the same analytical tools used to study phase transitions can also be applied to this system.
+  Below you can find a Unity demo of this model on a uniform 100×100 grid with a uniform neighborhood defined by $\|i-j\| \le 3$.
+</p>
+
+<br>
+
+<a href="https://github.com/andywiecko/kuramoto-unity">
+    <img
+        src="https://img.shields.io/github/stars/andywiecko/kuramoto-unity=kuramoto-unity"
+        alt="Demo Repository"
+    />
+</a>
+
+<iframe width="600" height="480" src="assets/kurumoto/index.html" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
+<p style="text-align: right;"><a href="#top">[Top]</a></p>
+
+<button id="blog-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-left-long"></i></button>
+
+<h3>References</h3>
+<p>
+  <ol class="bibliography">
+    <li id="wikipedia.kurumato">
+      <a href="https://en.wikipedia.org/wiki/Kuramoto_model">Kurumato model</a>. <em>Wikipedia</em>. Retrieved June 20, 2026.
+      <a href="#cite1">↩</a>
+    </li>
+  </ol>
+</p>
+
+</article>
+</main>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'],],
+    },
+  }
+  const typeFaceToggle = document.getElementById('typeface-toggle')
+  const typeface = document.getElementById('typeface')
+  typeFaceToggle.addEventListener('click', () => {
+    document.body.classList.toggle('libertinus')
+  })
+
+  const darkModeToggle = document.getElementById('dark-mode-toggle')
+  const light = document.getElementById('light')
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('latex-dark')
+    light.innerHTML = document.body.classList.contains('latex-dark') ?
+      "<span style='color: orange'><i class='fa-solid fa-sun'></i></span>" :
+      "<span style='color: rgb(24, 49, 83)'><i class='fa-solid fa-moon'></i></span>"
+  })
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>hljs.highlightAll();</script>
+<script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
