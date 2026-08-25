@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/x86asm.min.js"></script>
+
+  <title>Andrzej Więckowski, Ph.D. — personal webpage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:url" content="https://andywiecko.github.io/" />
+  <meta property="og:type" content="website" />
+</head>
+
+<style>
+ol.bibliography > li::marker {
+content: "[" counter(list-item) "]\2003";
+}
+
+.step {
+  counter-increment: step-counter;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.step::before {
+    content: counter(step-counter) ": ";
+}
+
+.small-caps {
+    font-variant: small-caps;
+  }
+</style>
+
+<body id="top" class="text-justify">
+  <header>
+    <h1><span class="latex">Andrzej Więckowski, Ph.D.</h1>
+  </header>
+
+ <center>
+    <button id="blog-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-left-long"></i></button>
+
+    <button id="home-toggle" onclick="location.href='../index.html'"><i class="fa-solid fa-house"></i></button>
+
+    <button onclick="location.href='https://github.com/sponsors/andywiecko'">
+      <span style="color: #db61a2"><i class="fa fa-regular fa-heart fa-lg"></i></span> Sponsor
+    </button>
+
+    <button id="github-toggle" onclick="location.href='https://github.com/andywiecko'"><i class="fa-brands fa-github fa-lg"></i> Follow</button>
+
+    <button id="typeface-toggle"><i class="fa-solid fa-font"></i></button>
+
+    <button id="dark-mode-toggle"><span id="light" style='color: rgb(24, 49, 83)'><i class="fa-solid fa-moon"></i></span></button>
+</center>
+
+<p class="author"><br> 25.08.2026</p>
+<main><article>
+
+<h2>To Sort or Not to Sort, That Is the Allocation</h2>
+
+<p> 
+    In this short blog entry, we will continue the previous investigation into GC allocation: 
+    <a href="06-foreach-list.html"><em>Dr. GCAlloc or: How I Learned to Stop Worrying and Love List&lt;T&gt;</em></a>, 
+    and further explore the potential issues with GC allocation when using <tt>List&lt;T&gt;</tt>.
+</p>
+
+<p>
+    Let’s consider a simple struct with a single field, just for demonstration purposes
+</p>
+
+<pre style="padding:0"><code class="language-cs">public readonly struct MyStruct
+{
+    public readonly int Value;
+    public MyStruct(int value) => Value = value;
+    public static implicit operator MyStruct(int v) => new(v);
+    public override string ToString() => Value.ToString();
+}
+</code></pre>
+
+<p>
+    Then let’s consider a <tt>List</tt> of structs and built-in <tt>Sort</tt> method.
+</p>
+
+<pre style="padding:0"><code class="language-cs">var list = new List&lt;MyStruct&gt; { 1, 5, 2, 8, 5, 3, 9, 0, 4, 2, 6, 6, 3, 1 };
+list.Sort();
+</code></pre>
+
+<p>
+    Using Unity’s profiler, we can investigate whether the <tt>Sort</tt> method causes any GC allocation.
+</p>
+
+<h3><tt>IComparable</tt></h3>
+
+<p>
+    <tt>List&lt;&gt;.Sort</tt> has a few overloads. 
+    However, the code above will throw an exception at runtime. 
+    The type <tt>T</tt> has to implement <tt>IComparable</tt>, and unfortunately, this can be detected <b>only</b> at runtime. 
+    This is rather unfortunate, since <tt>C#</tt> is generally considered a strongly typed language, and this issue should, and arguably could, be detected before compilation.
+</p>
+
+<pre style="padding:0"><code class="language-cs">public readonly struct MyStruct : IComparable&lt;MyStruct&gt;
+{
+    public readonly int Value;
+    public MyStruct(int value) => Value = value;
+    public int CompareTo(MyStruct other) => Value.CompareTo(other.Value);
+    public static implicit operator MyStruct(int v) => new(v);
+    public override string ToString() => Value.ToString();
+}
+
+...
+
+list.Sort(); // 128 B GC alloc!
+</code></pre>
+
+<p>
+    In Unity’s profiler, we can immediately see that this <tt>Sort</tt> call allocates 128 B of GC memory!
+</p>
+
+<h3><tt>IComparer</tt></h3>
+
+
+<p>
+    Another option is to use a custom comparer implementation using a class
+</p>
+
+<pre style="padding:0"><code class="language-cs">public class MyStructComparer : IComparer&lt;MyStruct&gt;
+{
+    public static readonly MyStructComparer Instance = new();
+    public int Compare(MyStruct x, MyStruct y) => x.Value.CompareTo(y.Value);
+}
+</code></pre>
+
+<p>or readonly struct</p>
+
+<pre style="padding:0"><code class="language-cs">public readonly struct MyStructComparer : IComparer&lt;MyStruct&gt;
+{
+    public static readonly MyStructComparer Instance = new();
+    public int Compare(MyStruct x, MyStruct y) => x.Value.CompareTo(y.Value);
+}
+</code></pre>
+
+<p>and we can then call <tt>Sort</tt> using the custom comparer.</p>
+
+<pre style="padding:0"><code class="language-cs">list.Sort(MyStructComparer.Instance);
+</code></pre>
+
+<p>
+    Unfortunately, with both implementations, we again get GC allocations: 128 B and 145 B for the class and struct, respectively.
+    I guess that the increased allocation in the struct implementation is related to <em>boxing</em>.
+</p>
+
+<h3><tt>Comparison</tt></h3>
+
+<p>
+    Finally, another option for <tt>Sort</tt> is to use a <tt>Comparison</tt> delegate.
+</p>
+
+<pre style="padding:0"><code class="language-cs">public readonly struct MyStruct
+{
+    public static Comparison&lt;MyStruct&gt; Comparison = (a, b) => a.Value.CompareTo(b.Value);
+    public readonly int Value;
+    public MyStruct(int value) => Value = value;
+    public static implicit operator MyStruct(int v) => new(v);
+    public override string ToString() => Value.ToString();
+}
+
+...
+
+list.Sort(MyStruct.Comparison);
+</code></pre>
+
+<p>
+    Surprisingly, this is the only solution presented here that is completely free of GC allocations!
+</p>
+
+<h3>Summary</h3>
+
+<p>
+    To sum up, default GC allocation can be surprising in <tt>C#</tt>.
+    It is very useful to debug and explore your code, especially when working with runtime applications that require top performance.
+    Below is a table comparing GC allocation values for all possible <tt>Sort</tt> calls.
+</p>
+
+<center>
+<table>
+    <thead>
+        <tr>
+            <th>implementation</th>
+            <th>GC alloc</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="color:red">
+            <td><tt>IComparable</tt></td>
+            <td style="text-align: center;">128 B</td>
+        </tr>
+        <tr style="color:red">
+            <td><tt>IComparer</tt>(class)</td>
+            <td style="text-align: center;">128 B</td>
+        </tr>
+        <tr style="color:red">
+            <td><tt>IComparer</tt>(struct)</td>
+            <td style="text-align: center;">145 B</td>
+        </tr>
+        <tr style="color: rgb(136, 212, 20)">
+            <td><tt>Comparison</tt></td>
+            <td style="text-align: center;"><b>0 B</b></td>
+        </tr>
+    </tbody>
+</table>
+</center>
+
+
+
+<p style="text-align: right;"><a href="#top">[Top]</a></p>
+
+<button id="blog-toggle" onclick="location.href='index.html'"><i class="fa-solid fa-left-long"></i></button>
+
+</article>
+</main>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'],],
+    },
+  }
+  const typeFaceToggle = document.getElementById('typeface-toggle')
+  const typeface = document.getElementById('typeface')
+  typeFaceToggle.addEventListener('click', () => {
+    document.body.classList.toggle('libertinus')
+  })
+
+  const darkModeToggle = document.getElementById('dark-mode-toggle')
+  const light = document.getElementById('light')
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('latex-dark')
+    light.innerHTML = document.body.classList.contains('latex-dark') ?
+      "<span style='color: orange'><i class='fa-solid fa-sun'></i></span>" :
+      "<span style='color: rgb(24, 49, 83)'><i class='fa-solid fa-moon'></i></span>"
+  })
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>hljs.highlightAll();</script>
+<script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
