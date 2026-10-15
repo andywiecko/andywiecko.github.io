@@ -4,6 +4,77 @@
     <title>Andrzej Więckowski, Blog</title>
     <link>https://andywiecko.github.io/blog/</link>
     <description>Najnowsze wpisy</description>
+
+    <item>
+      <title>To Sort or Not to Sort, That Is the Allocation</title>
+      <link>https://andywiecko.github.io/blog/08-list-sort.html</link>
+      <guid>https://andywiecko.github.io/blog/08-list-sort.html</guid>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0200</pubDate>
+      <description>
+      In this short blog entry, we will continue the previous investigation into GC allocation: Dr. GCAlloc or: How I Learned to Stop Worrying and Love List, and further explore the potential issues with GC allocation when using List.
+      </description>
+    </item>
+
+    <item>
+      <title>Spontaneous synchronization</title>
+      <link>https://andywiecko.github.io/blog/07-spontaneous-synchronization.html</link>
+      <guid>https://andywiecko.github.io/blog/07-spontaneous-synchronization.html</guid>
+      <pubDate>Sun, 21 Jun 26 00:00:00 +0200</pubDate>
+      <description>
+      Have you ever heard of spontaneous synchronization? It is a remarkable physical phenomenon, however, the mathematical model commonly used to describe this behavior is not immediately obvious. Below you can find an example video from the UCLA Department of Physics & Astronomy.
+      </description>
+    </item>
+
+    <item>
+      <title>Dr. GCAlloc or: How I Learned to Stop Worrying and Love List</title>
+      <link>https://andywiecko.github.io/blog/06-foreach-list.html</link>
+      <guid>https://andywiecko.github.io/blog/06-foreach-list.html</guid>
+      <pubDate>Sun, 17 May 2026 00:00:00 +0200</pubDate>
+      <description>
+      In this short blog entry, I will try to convince you that using the IReadOnlyList contract is sometimes not worth it. Especially in hot paths or projects that require high runtime performance, it is often better to use the regular List. The reason is the foreach loop, which unfortunately introduces GC allocations when used with IReadOnlyList, regardless of the underlying type. Of course, users can avoid these allocations by using a regular for loop (or by providing a custom enumerator via an extension method). However, this is somewhat counterintuitive, since foreach implies that the iterated collection is read-only and that modifying it will throw an exception.
+      </description>
+    </item>
+
+    <item>
+      <title>Exploring Burst 1: imin</title>
+      <link>https://andywiecko.github.io/blog/05-eb1-imin.html</link>
+      <guid>https://andywiecko.github.io/blog/05-eb1-imin.html</guid>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0200</pubDate>
+      <description>
+      Burst is a great and powerful tool that enables low-level optimizations while keeping your code readable and maintainable. I hope this marks the beginning of a series of blog posts in which I’ll share insights into how compiler can enhance performance through vectorization of mathematical utilities. I’m not aiming to measure performance explicitly, but rather to examine the generated assembly code.
+      </description>
+    </item>
+
+    <item>
+      <title>α-shapes</title>
+      <link>https://andywiecko.github.io/blog/04-alpha-shapes.html</link>
+      <guid>https://andywiecko.github.io/blog/04-alpha-shapes.html</guid>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0200</pubDate>
+      <description>
+      In this blog post, I want to show you an effective method for mesh reconstruction from point clouds. No edge constraints are needed! No opaque AI black box—just an analytically controlled, user-defined solution. Let me introduce you to α-shapes.
+      </description>
+    </item>
+
+    <item>
+      <title>Rodrigues’ formula</title>
+      <link>https://andywiecko.github.io/blog/03-rodrigues-formula.html</link>
+      <guid>https://andywiecko.github.io/blog/03-rodrigues-formula.html</guid>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0100</pubDate>
+      <description>
+      In this post, I will introduce you to a great tool: Rodrigues’ formula. This is not the Rodrigues associated with Tarantino’s films, but you’ll soon see that he is just as brilliant. Let’s dive in!
+      </description>
+    </item>
+
+    <item>
+      <title>AI, czyli społeczna hipochondria XXI wieku</title>
+      <link>https://andywiecko.github.io/blog/02-ai-scam.html</link>
+      <guid>https://andywiecko.github.io/blog/02-ai-scam.html</guid>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 +0100</pubDate>
+      <description>
+      Obserwacja popularyzacji i spekulacji na temat AI, między innymi w mediach, dręczy pytaniem, czy to aby nie jeden z największych scamów XXI wieku? Opracowanie algorytmów stojących za fasadą AI jest niezaprzeczalnym osiągnięciem i postępem, ale czy wymaga to siania trwogi stojącej na niewiedzy wśród społeczeństwa? Podczas odpowiedzi na te pytania, dla uproszczenia, nie będę wchodził w szczegóły techniczne i przykleję etykietę sztucznej inteligencji do omawianych zagadnień.
+      </description>
+    </item>
+
     <item>
       <title>Clean code? Nie dziękuję.</title>
       <link>https://andywiecko.github.io/blog/01-clean-code.html</link>
