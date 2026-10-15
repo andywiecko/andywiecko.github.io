@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Andrzej Więckowski, Blog</title>
+    <link>https://andywiecko.github.io/blog/</link>
+    <description>Najnowsze wpisy</description>
+    <item>
+      <title>Clean code? Nie dziękuję.</title>
+      <link>https://andywiecko.github.io/blog/01-clean-code.html</link>
+      <guid>https://andywiecko.github.io/blog/01-clean-code.html</guid>
+      <pubDate>Wed, 04 Jan 2023 00:00:00 +0100</pubDate>
+      <description>
+      Przestańmy korzystać z określenia czysty jako przymiotnik do kodu. Jak słyszę clean code to zaczyna mną telepać – to sformułowanie powinno zostać zakazane w środowisku IT. W świecie programowania nastała moda na używanie tego określenia, a w zasadzie problem zaczyna powoli przypominać religię. Nastała tendencja do utrudniania sobie życia np. poprzez wprowadzanie dodatkowych abstrakcji tam gdzie nie potrzeba, zakazywanie niektórych wzorców, czy dążenie do całkowitego „niepowtarzania kodu”.
+      </description>
+    </item>
+  </channel>
+</rss>
